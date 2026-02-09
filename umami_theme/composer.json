@@ -1,0 +1,15 @@
+{
+    "name": "drupal/umami_theme",
+    "type": "drupal-theme",
+    "description": "Front-end theme for the Umami 2026 Drupal CMS site template (Umami look-and-feel, forked from Mercury starterkit).",
+    "conflict": {
+        "drupal/experience_builder": "*"
+    },
+    "require": {
+        "drupal/cva": "^1"
+    },
+    "require-dev": {
+        "drupal/canvas": "^1"
+    },
+    "license": "GPL-2.0-or-later"
+}

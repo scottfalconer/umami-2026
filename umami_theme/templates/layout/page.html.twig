@@ -1,0 +1,114 @@
+{#
+/**
+ * @file
+ * Theme override to display a single page.
+ *
+ * This is based on Mercury's `page.html.twig`, but matches the overall
+ * structure of the core Umami theme to improve visual parity:
+ * - Header contains only the global header blocks.
+ * - Banner blocks render in a full-width band above breadcrumbs.
+ * - Breadcrumbs + page title render in `main` (not in the header).
+ * - Content is wrapped in `.main-content-area.container` like Umami.
+ *
+ * This theme also adds two regions to better match classic Umami:
+ * - `content_bottom` (Recipe collections band)
+ * - `bottom` (Disclaimer band)
+ *
+ * Keeping these as real regions lets us avoid "full width inside footer"
+ * layout hacks and keeps block placement/config closer to upstream Umami.
+ *
+ * @see \Drupal\mercury\Hook\ThemeHooks::preprocessPage()
+ * @see \Drupal\Core\Theme\ThemePreprocess::preprocessPage()
+ */
+#}
+<div class="layout-container">
+  {% if page.pre_header|render|trim is not empty or
+     page.header|render|trim is not empty %}
+    <header class="layout-header" role="banner">
+      <div class="container">
+        {% if page.pre_header|render|trim is not empty %}
+          {{ page.pre_header }}
+        {% endif %}
+        {{ page.header }}
+      </div>
+    </header>
+  {% endif %}
+
+  <main>
+    {{ page.highlighted }}
+
+    {# Full-width banner band (matches classic Umami `banner_top` region). #}
+    {% if page.banner_top|render|trim is not empty %}
+      <div class="layout-banner-top">
+        {{ page.banner_top }}
+      </div>
+    {% endif %}
+
+    {% if not (rendered_by_canvas|default(false)) %}
+      <div class="layout-breadcrumbs">
+        <div class="container">
+          {{ breadcrumb }}
+        </div>
+      </div>
+
+      {#
+        Match Umami: node titles are rendered by the node template itself.
+        The page title block is only used for non-node routes (views, search,
+        etc).
+      #}
+      {% if not node %}
+        <div class="layout-page-title">
+          <div class="container">
+            {{ title }}
+          </div>
+        </div>
+      {% endif %}
+    {% endif %}
+
+    <div class="main-content-area container">
+      <div class="layout-content">
+        <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+        {{ page.content }}
+      </div>{# /.layout-content #}
+
+      {% if page.sidebar_first %}
+        <aside class="layout-sidebar-first" role="complementary">
+          {{ page.sidebar_first }}
+        </aside>
+      {% endif %}
+
+      {% if page.sidebar_second %}
+        <aside class="layout-sidebar-second" role="complementary">
+          {{ page.sidebar_second }}
+        </aside>
+      {% endif %}
+    </div>
+
+    {% if page.content_bottom %}
+      <div class="layout-content-bottom">
+        {{ page.content_bottom }}
+      </div>
+    {% endif %}
+  </main>
+
+  {% if page.footer or page.bottom %}
+    <footer class="footer" role="contentinfo">
+      {% if page.footer %}
+        <div class="layout-footer">
+          <div class="container">
+            {{ page.footer }}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if page.bottom %}
+        <div class="layout-bottom">
+          <div class="container">
+            {{ page.bottom }}
+          </div>
+        </div>
+      {% endif %}
+    </footer>
+  {% endif %}
+
+</div>{# /.layout-container #}

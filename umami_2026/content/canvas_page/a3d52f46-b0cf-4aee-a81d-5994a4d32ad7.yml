@@ -1,0 +1,68 @@
+_meta:
+  version: '1.0'
+  entity_type: canvas_page
+  uuid: a3d52f46-b0cf-4aee-a81d-5994a4d32ad7
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  owner:
+    -
+      target_id: 1
+  title:
+    -
+      value: Home
+  path:
+    -
+      alias: /home
+      langcode: en
+  components:
+    - uuid: 8fdd9776-1909-4cb1-b7e1-aaf9f8e336fb
+      component_id: sdc.umami_theme.section
+      inputs:
+        columns: '100'
+        mobile_columns: '1'
+        width: '100%'
+        margin_block_start: '0'
+        margin_block_end: '0'
+        padding_block_start: '0'
+        padding_block_end: '0'
+        section_header: false
+        section_footer: false
+    - uuid: ba60e606-4e94-47d4-8231-c7ee98019250
+      component_id: block.views_block.promoted_items-block_1
+      parent_uuid: 8fdd9776-1909-4cb1-b7e1-aaf9f8e336fb
+      slot: main_slot
+      inputs:
+        label: ''
+        label_display: '0'
+        views_label: ''
+        items_per_page: null
+    - uuid: 8f671d37-4bd3-47bb-99f2-33a54f19c4d4
+      component_id: sdc.umami_theme.section
+      inputs:
+        columns: '100'
+        mobile_columns: '1'
+        width: '100%'
+        margin_block_start: '0'
+        margin_block_end: '0'
+        padding_block_start: '0'
+        padding_block_end: '0'
+        section_header: false
+        section_footer: false
+    - uuid: 6ffb6518-0f8c-44df-9f3e-3c09c50d57b1
+      component_id: block.views_block.frontpage-block_1
+      parent_uuid: 8f671d37-4bd3-47bb-99f2-33a54f19c4d4
+      slot: main_slot
+      inputs:
+        label: ''
+        label_display: '0'
+        views_label: ''
+        items_per_page: null
+  created:
+    -
+      value: 1770145502
+  revision_translation_affected:
+    -
+      value: true

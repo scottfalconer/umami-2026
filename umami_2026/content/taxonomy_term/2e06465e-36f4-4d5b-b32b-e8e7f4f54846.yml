@@ -1,0 +1,59 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 2e06465e-36f4-4d5b-b32b-e8e7f4f54846
+  bundle: tags
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: Vegetarian
+  weight:
+    -
+      value: 0
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /tags/vegetarian
+      langcode: en
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  content_translation_uid:
+    -
+      target_id: 0
+translations:
+  es:
+    status:
+      -
+        value: true
+    name:
+      -
+        value: Vegetariano
+    weight:
+      -
+        value: 0
+    revision_translation_affected:
+      -
+        value: true
+    path:
+      -
+        alias: /tags/vegetariano
+        langcode: es
+    content_translation_source:
+      -
+        value: und
+    content_translation_outdated:
+      -
+        value: false
+    content_translation_uid:
+      -
+        target_id: 0

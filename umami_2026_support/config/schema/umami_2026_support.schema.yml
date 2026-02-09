@@ -1,0 +1,11 @@
+block.settings.umami_2026_block_content_uuid:
+  type: block_settings
+  label: 'Umami 2026: Content block by UUID'
+  mapping:
+    block_uuid:
+      type: string
+      label: 'Block content UUID'
+    view_mode:
+      type: string
+      label: 'View mode'
+

@@ -1,0 +1,5 @@
+label: Español
+dependencies:
+  config:
+    - language.entity.und
+    - language.entity.zxx

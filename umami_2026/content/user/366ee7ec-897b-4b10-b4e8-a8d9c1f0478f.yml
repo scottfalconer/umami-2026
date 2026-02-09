@@ -1,0 +1,38 @@
+_meta:
+  version: '1.0'
+  entity_type: user
+  uuid: 366ee7ec-897b-4b10-b4e8-a8d9c1f0478f
+  default_langcode: en
+default:
+  preferred_langcode:
+    -
+      value: en
+  preferred_admin_langcode:
+    -
+      value: en
+  name:
+    -
+      value: 'Grace Hamilton'
+  pass:
+    -
+      value: $2y$10$zTgNkCsy1kZLwCn5uESnUeOteFb/G.jBM8BrJVf4iqReo5J7BBT4a
+      pre_hashed: true
+      existing: null
+  mail:
+    -
+      value: grace.hamilton@example.com
+  timezone:
+    -
+      value: America/Boise
+  status:
+    -
+      value: true
+  access:
+    -
+      value: 0
+  login:
+    -
+      value: 0
+  roles:
+    -
+      target_id: editor

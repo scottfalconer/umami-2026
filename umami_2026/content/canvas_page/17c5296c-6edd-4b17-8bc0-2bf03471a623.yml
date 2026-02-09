@@ -1,0 +1,59 @@
+_meta:
+  version: '1.0'
+  entity_type: canvas_page
+  uuid: 17c5296c-6edd-4b17-8bc0-2bf03471a623
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  owner:
+    -
+      target_id: 1
+  title:
+    -
+      value: Recipes
+  path:
+    -
+      alias: /recipes
+      langcode: en
+  components:
+    - uuid: d24ff014-b008-4910-b707-b03535ffa2fa
+      component_id: sdc.umami_theme.section
+      inputs:
+        columns: '100'
+        mobile_columns: '1'
+        width: '100%'
+        margin_block_start: '0'
+        margin_block_end: '0'
+        padding_block_start: '0'
+        padding_block_end: '0'
+        section_header: false
+        section_footer: false
+    - uuid: 5d75c7c6-298a-4f97-824e-4420d9e81696
+      component_id: sdc.umami_theme.heading
+      parent_uuid: d24ff014-b008-4910-b707-b03535ffa2fa
+      slot: main_slot
+      inputs:
+        heading_text: Recipes
+        level: 1
+        text_color: default
+        text_size: heading-responsive-4xl
+        align: left
+        url: ''
+    - uuid: c75d0db0-e278-4f6e-a7a6-14552587db83
+      component_id: block.views_block.recipes-block_1
+      parent_uuid: d24ff014-b008-4910-b707-b03535ffa2fa
+      slot: main_slot
+      inputs:
+        label: ''
+        label_display: '0'
+        views_label: ''
+        items_per_page: null
+  created:
+    -
+      value: 1770613817
+  revision_translation_affected:
+    -
+      value: true
+

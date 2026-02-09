@@ -1,0 +1,59 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: c633e044-7851-48e5-af33-d63638b250a1
+  bundle: tags
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Dinner party'
+  weight:
+    -
+      value: 0
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /tags/dinner-party
+      langcode: en
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  content_translation_uid:
+    -
+      target_id: 0
+translations:
+  es:
+    status:
+      -
+        value: true
+    name:
+      -
+        value: 'Fiesta de cena'
+    weight:
+      -
+        value: 0
+    revision_translation_affected:
+      -
+        value: true
+    path:
+      -
+        alias: /tags/fiesta-de-cena
+        langcode: es
+    content_translation_source:
+      -
+        value: und
+    content_translation_outdated:
+      -
+        value: false
+    content_translation_uid:
+      -
+        target_id: 0

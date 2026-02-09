@@ -1,0 +1,21 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: cea18f7d-2514-44b1-8d51-a21cf61b7b76
+  default_langcode: en
+default:
+  filename:
+    -
+      value: chili-sauce-umami.jpg
+  uri:
+    -
+      value: 'public://chili-sauce-umami.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 100481
+  status:
+    -
+      value: true

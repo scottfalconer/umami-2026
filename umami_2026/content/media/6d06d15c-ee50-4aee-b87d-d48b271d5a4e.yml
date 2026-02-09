@@ -1,0 +1,70 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 6d06d15c-ee50-4aee-b87d-d48b271d5a4e
+  bundle: image
+  default_langcode: en
+  depends:
+    44a801cb-d121-456e-bd85-7d692823944b: file
+    3d776142-3806-4058-975e-d374a1d41a7d: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Watercress soup'
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_media_image:
+    -
+      alt: 'Watercress soup with a sprig of coriander as garnish in a white bowl with green trim'
+      title: ''
+      width: 768
+      height: 512
+      entity: 44a801cb-d121-456e-bd85-7d692823944b
+translations:
+  es:
+    status:
+      -
+        value: true
+    uid:
+      -
+        target_id: 0
+    name:
+      -
+        value: 'Sopa de berro'
+    revision_translation_affected:
+      -
+        value: true
+    path:
+      -
+        langcode: es
+        alias: null
+    content_translation_source:
+      -
+        value: und
+    content_translation_outdated:
+      -
+        value: false
+    field_media_image:
+      -
+        alt: 'Sopa de berros con una ramita de cilantro como guarnición en un tazón blanco con borde verde.'
+        title: ''
+        width: 768
+        height: 512
+        entity: 3d776142-3806-4058-975e-d374a1d41a7d

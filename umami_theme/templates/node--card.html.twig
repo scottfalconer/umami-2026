@@ -1,0 +1,49 @@
+{#
+/**
+ * @file
+ * Umami "2026" card: prefer Mercury SDCs.
+ *
+ * Drupal CMS renders cards via node view modes (used by Views). This template
+ * maps Umami node data into Mercury's card SDC, so we exercise Mercury rather
+ * than re-implementing card markup and styling.
+ */
+#}
+{% set title_text = label ?: '' %}
+
+{# Map Umami's featured image into Mercury's card media prop (best-effort). #}
+{% set media = {} %}
+{% set media_entity = node.field_media_image.entity ?? null %}
+{% set media_item = media_entity ? (media_entity.field_media_image.0 ?? null) : null %}
+{% if media_item and media_item.entity %}
+  {#
+    Mercury's card uses `canvas:image`, which validates props strictly: width/height
+    must be numbers (NULL causes InvalidComponentException).
+  #}
+  {% set media_width = (media_item.width|default(0)) + 0 %}
+  {% set media_height = (media_item.height|default(0)) + 0 %}
+  {% if media_width > 0 and media_height > 0 %}
+    {% set media = {
+      src: file_url(media_item.entity.uri.value),
+      alt: media_item.alt|default(''),
+      width: media_width,
+      height: media_height,
+    } %}
+  {% endif %}
+{% endif %}
+
+{# Recipe cards have a dedicated summary field we can use as card text. #}
+{% set description_text = '' %}
+{% if node.bundle == 'recipe' and node.field_summary and node.field_summary.value %}
+  {% set description_text = node.field_summary.value %}
+{% endif %}
+
+{% include 'umami_theme:card' with {
+  heading_text: title_text,
+  level: 2,
+  orientation: 'vertical',
+  style: 'framed',
+  url: url,
+  media: media,
+  text: description_text,
+  is_text_centered: false,
+} only %}

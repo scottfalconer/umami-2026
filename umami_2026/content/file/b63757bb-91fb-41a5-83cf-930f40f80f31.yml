@@ -1,0 +1,21 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: b63757bb-91fb-41a5-83cf-930f40f80f31
+  default_langcode: en
+default:
+  filename:
+    -
+      value: veggie-pasta-bake-hero-umami.jpg
+  uri:
+    -
+      value: 'public://veggie-pasta-bake-hero-umami.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 225830
+  status:
+    -
+      value: true

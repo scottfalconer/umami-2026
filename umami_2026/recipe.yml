@@ -1,0 +1,142 @@
+name: 'Umami 2026'
+type: Site
+description: 'Umami Food Magazine demo template rebuilt for Drupal CMS 2.0 (Canvas + Umami Theme).'
+recipes:
+  - core/recipes/administrator_role
+  - core/recipes/core_recommended_maintenance
+  - core/recipes/core_recommended_performance
+  - drupal_cms_admin_ui
+  - drupal_cms_anti_spam
+  - drupal_cms_authentication
+  - drupal_cms_media
+  - drupal_cms_privacy_basic
+  - drupal_cms_seo_basic
+  - easy_email_express
+install:
+  - announcements_feed
+  - automated_cron
+  - big_pipe
+  - block
+  - block_content
+  - breakpoint
+  - ckeditor5
+  - config
+  - config_translation
+  - content_moderation
+  - content_translation
+  - contextual
+  - datetime
+  - dblog
+  - dynamic_page_cache
+  - editor
+  - field
+  - field_ui
+  - file
+  - filter
+  - help
+  - history
+  - image
+  - language
+  - link
+  - locale
+  - media
+  - media_library
+  - menu_link_content
+  - menu_ui
+  - node
+  - options
+  - page_cache
+  - path
+  - path_alias
+  - responsive_image
+  - search
+  - shortcut
+  - system
+  - taxonomy
+  - text
+  - toolbar
+  - update
+  - user
+  - views
+  - views_ui
+  - workflows
+  - canvas
+  - drupal_cms_helper
+  - umami_2026_support
+  - gin
+  # Required by umami_theme (Mercury starterkit fork).
+  - cva
+  - umami_theme
+config:
+  strict: false
+  actions:
+    # Workaround: ensure `canvas.component.*` entities exist and have current
+    # version hashes before any Canvas component config actions run.
+    system.site:
+      umamiGenerateCanvasComponents: []
+      simpleConfigUpdate:
+        page.front: /home
+
+    # Disable Canvas components that aren't really useful in building pages or
+    # content templates (mirrors Drupal CMS Starter's approach).
+    ?canvas.component.block.announce_block:
+      disable: []
+    ?canvas.component.block.dashboard_placeholder:
+      disable: []
+    ?canvas.component.block.dashboard_site_status:
+      disable: []
+    ?canvas.component.block.local_actions_block:
+      disable: []
+    ?canvas.component.block.local_tasks_block:
+      disable: []
+    ?canvas.component.block.navigation_dashboard:
+      disable: []
+    ?canvas.component.block.navigation_link:
+      disable: []
+    ?canvas.component.block.navigation_shortcuts:
+      disable: []
+    ?canvas.component.block.navigation_user:
+      disable: []
+    canvas.component.block.project_browser_block.*:
+      disable: []
+    ?canvas.component.block.system_menu_block.admin:
+      disable: []
+    ?canvas.component.block.system_menu_block.navigation-user-links:
+      disable: []
+    ?canvas.component.block.system_menu_block.tools:
+      disable: []
+    ?canvas.component.block.system_menu_block.top-tasks:
+      disable: []
+    ?canvas.component.block.system_messages_block:
+      disable: []
+    ?canvas.component.block.views_block.publishing_content-block_drafts:
+      disable: []
+    ?canvas.component.block.views_block.publishing_content-block_scheduled:
+      disable: []
+    ?canvas.component.block.views_block.recent_pages-block_recent_pages:
+      disable: []
+    ?canvas.component.sdc.navigation.title:
+      disable: []
+
+    user.role.anonymous:
+      grantPermissions:
+        - 'search content'
+        - 'access user profiles'
+    user.role.authenticated:
+      grantPermissions:
+        - 'search content'
+        - 'access user profiles'
+    system.theme:
+      simpleConfigUpdate:
+        admin: gin
+        default: umami_theme
+    system.theme.global:
+      simpleConfigUpdate:
+        logo:
+          path: themes/contrib/umami_theme/logo.svg
+          url: null
+          use_default: false
+
+extra:
+  recipe_installer_kit:
+    finish_url: '/admin/dashboard/welcome'

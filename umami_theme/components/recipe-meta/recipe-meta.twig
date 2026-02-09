@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * Render recipe meta fields.
+ */
+#}
+
+{% set difficulty_label_map = {
+  easy: 'Easy'|t,
+  medium: 'Medium'|t,
+  hard: 'Hard'|t
+} %}
+
+<dl class="umami-recipe-meta">
+  {% if preparation_time is not empty %}
+    <div class="umami-recipe-meta__item">
+      <dt class="umami-recipe-meta__term">{{ 'Prep'|t }}</dt>
+      <dd class="umami-recipe-meta__value">{{ preparation_time }} {{ 'minutes'|t }}</dd>
+    </div>
+  {% endif %}
+
+  {% if cooking_time is not empty %}
+    <div class="umami-recipe-meta__item">
+      <dt class="umami-recipe-meta__term">{{ 'Cook'|t }}</dt>
+      <dd class="umami-recipe-meta__value">{{ cooking_time }} {{ 'minutes'|t }}</dd>
+    </div>
+  {% endif %}
+
+  {% if number_of_servings is not empty %}
+    <div class="umami-recipe-meta__item">
+      <dt class="umami-recipe-meta__term">{{ 'Serves'|t }}</dt>
+      <dd class="umami-recipe-meta__value">{{ number_of_servings }}</dd>
+    </div>
+  {% endif %}
+
+  {% if difficulty is not empty %}
+    {% set difficulty_label = difficulty_label_map[difficulty]|default(difficulty) %}
+    <div class="umami-recipe-meta__item">
+      <dt class="umami-recipe-meta__term">{{ 'Difficulty'|t }}</dt>
+      <dd class="umami-recipe-meta__value">{{ difficulty_label }}</dd>
+    </div>
+  {% endif %}
+</dl>

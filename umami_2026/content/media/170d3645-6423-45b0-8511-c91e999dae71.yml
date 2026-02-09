@@ -1,0 +1,70 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 170d3645-6423-45b0-8511-c91e999dae71
+  bundle: image
+  default_langcode: en
+  depends:
+    c5111a23-7a48-4667-a4cc-555608bbb31e: file
+    621c9478-8ce4-481c-9726-9ba652d35e97: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Home Grown Herbs'
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_media_image:
+    -
+      alt: 'Fresh cut herbs including mint, parsley, thyme and dill'
+      title: ''
+      width: 768
+      height: 512
+      entity: c5111a23-7a48-4667-a4cc-555608bbb31e
+translations:
+  es:
+    status:
+      -
+        value: true
+    uid:
+      -
+        target_id: 0
+    name:
+      -
+        value: 'Prueba y cultiva tus propias hierbas'
+    revision_translation_affected:
+      -
+        value: true
+    path:
+      -
+        langcode: es
+        alias: null
+    content_translation_source:
+      -
+        value: und
+    content_translation_outdated:
+      -
+        value: false
+    field_media_image:
+      -
+        alt: 'Hierbas frescas cortadas incluyendo menta, perejil, tomillo y eneldo.'
+        title: ''
+        width: 768
+        height: 512
+        entity: 621c9478-8ce4-481c-9726-9ba652d35e97

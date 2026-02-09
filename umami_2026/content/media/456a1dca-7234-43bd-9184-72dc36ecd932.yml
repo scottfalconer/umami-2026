@@ -1,0 +1,70 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 456a1dca-7234-43bd-9184-72dc36ecd932
+  bundle: image
+  default_langcode: en
+  depends:
+    1dc944b5-4887-44d4-98cd-dc39ba5105c8: file
+    bd56a1f2-61ea-4f81-babf-22ad448b158c: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Borscht with pork ribs'
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_media_image:
+    -
+      alt: 'Traditional Ukrainian soup with beets, tomatoes, and pork ribs'
+      title: ''
+      width: 768
+      height: 512
+      entity: 1dc944b5-4887-44d4-98cd-dc39ba5105c8
+translations:
+  es:
+    status:
+      -
+        value: true
+    uid:
+      -
+        target_id: 0
+    name:
+      -
+        value: 'Borscht con costillas de cerdo'
+    revision_translation_affected:
+      -
+        value: true
+    path:
+      -
+        langcode: es
+        alias: null
+    content_translation_source:
+      -
+        value: und
+    content_translation_outdated:
+      -
+        value: false
+    field_media_image:
+      -
+        alt: 'Sopa tradicional ucraniana de remolacha, tomates y costillas de cerdo'
+        title: ''
+        width: 768
+        height: 512
+        entity: bd56a1f2-61ea-4f81-babf-22ad448b158c

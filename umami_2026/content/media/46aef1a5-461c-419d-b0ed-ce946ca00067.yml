@@ -1,0 +1,70 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 46aef1a5-461c-419d-b0ed-ce946ca00067
+  bundle: image
+  default_langcode: en
+  depends:
+    86d65907-eeae-43ee-b0de-af85cb93875a: file
+    08fbfdba-7716-4081-a7c0-c9dafc09ba5d: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Victoria sponge cake'
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_media_image:
+    -
+      alt: 'A classic, uncut Victoria sponge with a deep filling of butter cream and jam'
+      title: ''
+      width: 768
+      height: 512
+      entity: 86d65907-eeae-43ee-b0de-af85cb93875a
+translations:
+  es:
+    status:
+      -
+        value: true
+    uid:
+      -
+        target_id: 0
+    name:
+      -
+        value: 'Pastel Victoria'
+    revision_translation_affected:
+      -
+        value: true
+    path:
+      -
+        langcode: es
+        alias: null
+    content_translation_source:
+      -
+        value: und
+    content_translation_outdated:
+      -
+        value: false
+    field_media_image:
+      -
+        alt: 'Una esponja Victoria clásica, sin cortar, con un relleno profundo de crema de mantequilla y mermelada'
+        title: ''
+        width: 768
+        height: 512
+        entity: 08fbfdba-7716-4081-a7c0-c9dafc09ba5d

@@ -1,0 +1,139 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: bddd51a8-339a-4830-9dc7-efea4b233c34
+  bundle: article
+  default_langcode: en
+  depends:
+    a125faf4-cad5-4846-a45a-ba343fec7046: user
+    0a0d273c-3573-410f-9437-f20889018ec6: media
+    55de19ab-51c2-47bb-bd8a-808382c7d8f2: taxonomy_term
+    39818265-d0f6-448d-af7d-828ba3957760: taxonomy_term
+    18141973-ca16-49c4-9d65-295c2d8f01bf: user
+default:
+  revision_uid:
+    -
+      entity: a125faf4-cad5-4846-a45a-ba343fec7046
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: a125faf4-cad5-4846-a45a-ba343fec7046
+  title:
+    -
+      value: 'The real deal for supermarket savvy shopping'
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  created:
+    -
+      value: 1769534801
+  moderation_state:
+    -
+      value: published
+  path:
+    -
+      alias: /articles/the-real-deal-for-supermarket-savvy-shopping
+      langcode: en
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_body:
+    -
+      value: |
+        <p>This may not surprise you - but your supermarket is a hot bed of marketing mayhem, designed to improve their profit and to encourage the consumer to spend more than they intended. The tricks that all supermarkets employ are sometimes sensible ploys that any retailer should do to improve sales - but some may be more subtle and less obvious than you might think.</p>
+        <p>With consumer awareness articles and documentaries frequently picking up on this topic, it's likely the case that retailers find it harder to get away with the more obvious ploys. We are becoming ever more savvy consumers and there's probably not a great deal that gets past us. But here's a few retail tricks to keep in mind when you are rushing around the weekly supermarket stock-up.</p>
+        <h2>Lost essentials</h2>
+        <p>The layout of your supermarket may make sense to you when you have shopped there for a while. But for newcomers trying to find essentials, it may make very little sense at all. Some supermarkets have noted that people come to their store to buy milk, bread, or eggs and that by hiding these essentials in the far reaches of the store, they encourage the newcomer to wander the aisles - picking up other items as they go.</p>
+        <p>Sure, this can be great for nudging the memory on essentials you might otherwise forget, but for saving the pennies it's tough to stick to grabbing only the things you came for and the supermarkets know it!</p>
+        <blockquote>
+        Our tip: Make your shopping list before leaving the house, checking what you need and sticking to that list. You could be amazed by what you'll save over time.
+        </blockquote>
+        <h2>Nonsensical multibuys</h2>
+        <p>Buy one, get one free; two for &pound;2 and meal deals. They all seem like a great deal. But in some cases these are loss leaders that are positioned to encourage you to take up the deal and buy other stuff while you are there. In other cases, deals for multi-buy or discounts on specific pack sizes might seem like a bargain, until you compare the pricing like-for-like on similar brands or with pack sizes for the same brand. These deals can mean you end up paying less but is it less for something you don't really need and in some cases you can end up paying more for the item. Remember, the supermarkets know you are often in a hurry and might not have the time to take in the full picture.</p>
+        <blockquote>
+        <p>Our tip: Don't be rushed, take the time to read the small print. The large print will draw you in but if you read the label small print, you should find the price per 100 grams or per ounce/litre and you'll be surprised how often the headline deals are actually more expensive than just buying a different package type or size of the product.</p>
+        </blockquote>
+        <h2>Understanding our shopping habits</h2>
+        <p>The cheapest products in a supermarket are almost always positioned on the bottom of the shelving where you'll need to bend over to pick it up. You also may not be able to easily read the price ticket. Most people will shop on the middle rows because it is easier and often quicker. These are where the highest profit items are kept and they are the ones the supermarkets want you to buy.</p>
+        <p>The layout, the music, the colors, and the product types are all decided based on principles laid down by industry experts on people - psychologists and behavioral experts who know how we think. And so the savvy shopper will certainly be able to take advantage of great deals in their weekly shop, but it takes a little time and effort just to be more aware of what we are being encouraged to reach for in the aisles.</p>
+      format: basic_html
+  field_media_image:
+    -
+      entity: 0a0d273c-3573-410f-9437-f20889018ec6
+  field_tags:
+    -
+      entity: 55de19ab-51c2-47bb-bd8a-808382c7d8f2
+    -
+      entity: 39818265-d0f6-448d-af7d-828ba3957760
+translations:
+  es:
+    revision_uid:
+      -
+        entity: a125faf4-cad5-4846-a45a-ba343fec7046
+    status:
+      -
+        value: true
+    uid:
+      -
+        entity: 18141973-ca16-49c4-9d65-295c2d8f01bf
+    title:
+      -
+        value: 'El verdadero negocio para comprar en el supermercado'
+    promote:
+      -
+        value: true
+    sticky:
+      -
+        value: false
+    revision_translation_affected:
+      -
+        value: true
+    moderation_state:
+      -
+        value: published
+    path:
+      -
+        alias: /articles/el-verdadeo-negocio-para-comprar-en-el-supermercado
+        langcode: es
+    content_translation_source:
+      -
+        value: und
+    content_translation_outdated:
+      -
+        value: false
+    field_body:
+      -
+        value: |
+          <p>Puede que esto no le sorprenda, pero su supermercado es un hervidero de marketing caótico diseñado para mejorar sus ganancias y para alentar al consumidor a gastar más de lo que pretendía. Los trucos que emplean todos los supermercados son a veces tácticas sensatas que cualquier minorista debería hacer para mejorar las ventas, pero algunas de ellas  pueden ser más sutiles y menos obvias de lo que cree.</p>
+          <p>Debido a los artículos y los documentales de sensibilización, los consumidores retoman este tema con frecuencia y es probable que a los minoristas les resulte más difícil salirse con la suya usando solamente los trucos más obvios. Nos estamos convirtiendo en unos consumidores cada vez más inteligentes y probablemente no hay muchas cosas que nos sorprendan. Pero aquí hay algunos trucos para la venta al por menor que debe tener en cuenta cuando se apresura a realizar la compra semanal en el supermercado.</p>
+          <h2>Productos esenciales escondidos</h2>
+          <p>La distribución de su supermercado puede tener mucho sentido para usted cuando lleva comprando ahí un tiempo, pero para los nuevos clientes que están intentando encontrar los productos esenciales puede que no tenga ningún sentido. Algunos supermercados han notado como la gente que viene a su tienda a comprar leche, pan o huevos y que, ocultando esos productos esenciales en esquinas recónditas de la tienda, los animan a deambular por ella mientras añaden a la cesta otros productos antes de irse.</p>
+          <p>Por supuesto, esto puede ser genial para recordar productos esenciales que de otra forma olvidaría, pero no lo es si lo que quiere es ahorrar unas monedas y solo comprar las cosas a por las que vino, y eso lo los supermercados lo saben.</p>
+          <blockquote>
+          Nuestro consejo: Realice la lista de la compra antes de salir de casa, revisando que necesita y marcándolo en la lista. Le sorprenderá lo que ahorra con el tiempo.
+          </blockquote>
+          <h2>Descuentos por número</h2>
+          <p>Compre uno y llévese otro gratis; dos por 2&pound; y ofertas en comida. Todo esto descuentos parecen una buena oportunidad, pero en algunos casos son productos vendidos a pérdidas con el único objetivo de atraerle y que compre más cosas mientras está allí. En otros casos, las ofertas para múltiples productos o packs de tamaño específico pueden parecer una ganga hasta que se comparan los precios con marcas similares u otros tamaños de la misma marca. Estos descuentos pueden hacerle pensar que paga menos pero es menos por algo que no necesita e incluso puede terminar pagando más por el artículo. Recuerde, los supermercados saben que a menudo tiene prisa y no tiene tiempo suficiente de considerar la imagen completa del producto.</p>
+          <blockquote>
+          <p>Nuestro consejo: No se apresure y tómese el tiempo necesario para leer la letra pequeña. La letra grande le atraerá pero en la letra pequeña encontrará el precio por cada 100g de producto o el precio por litro y se sorprenderá de la de veces que no existe tal oferta o incluso que es más caro que el paquete pequeño.</p>
+          </blockquote>
+          <h2>Entendiendo nuestros hábitos de compra</h2>
+          <p>Los productos más baratos del supermercado casi siempre se colocan en la parte baja de las estanterías, donde tendrá que agacharse para tomarlos. También es posible que no pueda leer fácilmente el precio en el ticket. La mayoría de la gente selecciona los productos de la parte media de las estanterías dado que es más fácil y rápido. Esos productos son los que tienen mayores beneficios y son los que el supermercado quiere que compre.</p>
+          <p>La distribución de música, colores y tipos de productos está decidido en base a unos principios establecidos por expertos en personas: psicólogos y expertos en comportamiento que saben cómo pensamos. Y así, el comprador inteligente sin duda podrá aprovechar las grandes ofertas en su tienda semanal, pero se necesita un poco de tiempo y esfuerzo para ser más conscientes de lo que se nos incita a escoger en los pasillos.</p>
+        format: basic_html
+    field_media_image:
+      -
+        entity: 0a0d273c-3573-410f-9437-f20889018ec6
+    field_tags:
+      -
+        entity: 55de19ab-51c2-47bb-bd8a-808382c7d8f2
+      -
+        entity: 39818265-d0f6-448d-af7d-828ba3957760

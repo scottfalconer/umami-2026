@@ -1,0 +1,70 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: ea4badd6-f396-4c23-b35a-18c87df59683
+  bundle: image
+  default_langcode: en
+  depends:
+    f2473777-ab99-490a-87b2-6e10f6631a6e: file
+    cea18f7d-2514-44b1-8d51-a21cf61b7b76: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Fiery chili sauce'
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_media_image:
+    -
+      alt: 'An iridescent array of chilies, onions, and garlic, slowly sweating over a low heat'
+      title: ''
+      width: 768
+      height: 512
+      entity: f2473777-ab99-490a-87b2-6e10f6631a6e
+translations:
+  es:
+    status:
+      -
+        value: true
+    uid:
+      -
+        target_id: 0
+    name:
+      -
+        value: 'Salsa de chile ardiente'
+    revision_translation_affected:
+      -
+        value: true
+    path:
+      -
+        langcode: es
+        alias: null
+    content_translation_source:
+      -
+        value: und
+    content_translation_outdated:
+      -
+        value: false
+    field_media_image:
+      -
+        alt: 'Una variedad iridiscente de chiles, cebollas y ajo, que suda lentamente a fuego lento'
+        title: ''
+        width: 768
+        height: 512
+        entity: cea18f7d-2514-44b1-8d51-a21cf61b7b76

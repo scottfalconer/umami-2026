@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: shortcut
+  uuid: f7650e6a-b261-46c2-bfeb-26833313892e
+  bundle: default
+  default_langcode: en
+default:
+  title:
+    -
+      value: 'Add content'
+  weight:
+    -
+      value: -20
+  link:
+    -
+      uri: 'internal:/node/add'
+      title: null
+      options: {  }

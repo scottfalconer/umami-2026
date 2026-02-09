@@ -1,0 +1,1527 @@
+/**
+ * Umami parity and layout overrides.
+ *
+ * This file contains Umami-specific styling that goes beyond token overrides
+ * in `src/theme.css`. Prefer Canvas composition + SDC props where possible.
+ */
+*:focus {
+  outline-width: 1px;
+  outline-style: dotted;
+  outline-color: #008068;
+  outline-offset: 2px;
+}
+
+a {
+  text-decoration: underline;
+  color: #008068;
+}
+
+a:hover,
+a:focus {
+  color: #cc2a00;
+  background-color: #e6eee0;
+}
+
+body {
+  margin: 0;
+  color: #464646;
+  background: #fbf5ee;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
+h1,
+.page-title {
+  margin: 0 0 1.07rem 0;
+  font-family: var(--font-serif);
+  font-size: 1.424rem;
+  line-height: 1.2;
+  color: #000;
+}
+
+@media screen and (min-width: 60rem) {
+  h1,
+  .page-title {
+    font-size: 2.369rem;
+  }
+}
+
+h2 {
+  margin: 0 0 0.7rem 0;
+  font-family: var(--font-serif);
+  font-size: 1.266rem;
+  line-height: 1.2;
+  color: #000;
+}
+
+@media screen and (min-width: 60rem) {
+  h2 {
+    font-size: 1.77rem;
+  }
+}
+
+h3 {
+  margin: 0 0 0.96rem 0;
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  line-height: 1.2;
+  color: #000;
+}
+
+@media screen and (min-width: 60rem) {
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+h4 {
+  margin: 0 0 1.28rem 0;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  line-height: 1.2;
+  color: #000;
+}
+
+@media screen and (min-width: 60rem) {
+  h4 {
+    font-size: 1.33rem;
+  }
+}
+
+h5 {
+  margin: 0 0 1.28rem 0;
+  font-family: var(--font-serif);
+  font-size: 0.889rem;
+  line-height: 1.2;
+  color: #000;
+}
+
+@media screen and (min-width: 60rem) {
+  h5 {
+    font-size: 1.25rem;
+  }
+}
+
+h6 {
+  margin: 0 0 1.28rem 0;
+  font-family: var(--font-serif);
+  font-size: 0.79rem;
+  line-height: 1.2;
+  color: #000;
+}
+
+@media screen and (min-width: 60rem) {
+  h6 {
+    font-size: 1rem;
+  }
+}
+
+/*
+ * Typography parity: Umami uses the serif for headings/titles.
+ * (Mercury SDC heading component does not set a font-family.)
+ */
+.heading-responsive-8xl,
+.heading-responsive-7xl,
+.heading-responsive-6xl,
+.heading-responsive-5xl,
+.heading-responsive-4xl,
+.heading-responsive-3xl,
+.heading-responsive-2xl,
+.heading-responsive-xl {
+  font-family: var(--font-serif);
+  font-weight: 400;
+}
+
+/*
+ * Page title parity: use Umami-ish typography and spacing.
+ *
+ * Mercury's default `page_title` template is Tailwind-class heavy; the
+ * `umami_cms` module provides a suggestion that prints `.page-title` so we can
+ * style it consistently.
+ */
+body.path-recipes .page-title,
+body.path-articles .page-title,
+body.path-search .page-title {
+  padding: 0;
+  margin: 1rem 0 3rem;
+  text-align: center;
+}
+
+/*
+ * Breadcrumb parity: render as "Home » Section » Page".
+ *
+ * Mercury's breadcrumb component renders icons; `umami_cms` supplies a
+ * simplified template with `.breadcrumb`.
+ */
+.breadcrumb {
+  padding: 0.79rem 0 0.5em;
+}
+
+.breadcrumb ol {
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumb li {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.breadcrumb li::before {
+  content: " \BB ";
+}
+
+.breadcrumb li:first-child::before {
+  content: none;
+}
+
+.breadcrumb a {
+  text-decoration: underline;
+  color: #008068;
+  background-color: inherit;
+}
+
+/*
+ * Button parity: style Mercury's accent buttons like Umami's `.button--primary`.
+ *
+ * Mercury buttons are utility-class heavy; we use a broad selector and override
+ * the key visual properties.
+ */
+.canvas-page a.bg-accent {
+  display: inline-block;
+  margin: 0;
+  padding: 0.7rem 1.3rem;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid #d93760;
+  border-radius: 3px;
+  background-color: #d93760;
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  line-height: normal;
+}
+
+.canvas-page a.bg-accent:hover,
+.canvas-page a.bg-accent:active,
+.canvas-page a.bg-accent:focus {
+  transition: background-color 0.5s ease;
+  text-decoration: none;
+  color: #000;
+  outline-color: #fff;
+  outline-offset: 2px;
+  background-color: #fcece7;
+}
+
+/*
+ * Header parity: match baseline Umami's pre-header + header behavior.
+ */
+header[role="banner"] {
+  background: #fff;
+}
+
+/**
+ * Pre-header region: language switcher + search + account.
+ *
+ * Ported from core Umami's `pre-header.css`.
+ */
+.region-pre-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 4%;
+  border-bottom: 1px solid #e6eee0;
+}
+
+@media screen and (min-width: 48rem) {
+  .region-pre-header {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 80rem) {
+  .region-pre-header {
+    padding: 0;
+  }
+}
+
+#block-mercury-language-switcher ul.links {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#block-mercury-language-switcher ul.links li + li {
+  margin-inline-start: 1rem;
+}
+
+#block-mercury-language-switcher ul.links {
+  color: inherit;
+}
+
+#block-mercury-language-switcher a,
+#block-mercury-language-switcher a:hover,
+#block-mercury-language-switcher a:focus {
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+}
+
+#block-mercury-language-switcher a:hover,
+#block-mercury-language-switcher a:focus {
+  text-decoration: underline;
+}
+
+#block-mercury-language-switcher a.is-active {
+  font-weight: 700;
+}
+
+/* Constrain the logo size. Mercury's branding template renders the SVG full-width. */
+#block-mercury-site-branding .branding {
+  width: 100%;
+  max-width: 205px;
+}
+
+#block-mercury-site-branding img {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (min-width: 48em) {
+  #block-mercury-site-branding {
+    margin: 2.5rem 0;
+  }
+}
+
+/**
+ * Header region: burger + dropdown menu behavior.
+ *
+ * Ported from core Umami's `header.css`.
+ */
+.umami-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 4%;
+}
+
+@media screen and (min-width: 48rem) {
+  .umami-header {
+    padding-top: 0;
+  }
+}
+
+@media screen and (min-width: 80rem) {
+  .umami-header {
+    padding: 0;
+  }
+}
+
+.umami-header__burger {
+  width: 41px;
+  height: 41px;
+  margin-right: -9px;
+  padding: 0 6px;
+  text-align: left;
+  border: 3px solid transparent;
+  border-radius: 0;
+  background-color: transparent;
+  line-height: 1;
+}
+
+.umami-header__burger:hover {
+  background-color: transparent;
+}
+
+.umami-header__burger svg {
+  display: block;
+}
+
+@media screen and (min-width: 48em) {
+  .umami-header__burger {
+    display: none;
+  }
+}
+
+.umami-header__dropdown {
+  overflow: hidden;
+  flex-basis: 100%;
+  max-height: 0;
+  transition: max-height 0.5s ease-in;
+}
+
+@media screen and (min-width: 48em) {
+  .umami-header__dropdown {
+    overflow: auto;
+    flex-basis: auto;
+    max-height: none;
+  }
+}
+
+.umami-header__burger[aria-expanded="true"] ~ .umami-header__dropdown {
+  overflow-y: auto;
+  max-height: 18.75rem;
+}
+
+.umami-header__logo {
+  flex: 0 1 40%;
+}
+
+@media screen and (min-width: 48em) {
+  .umami-header__logo {
+    flex: 0 1 220px;
+  }
+}
+
+/**
+ * Search block.
+ *
+ * Ported from core Umami's `search.css`.
+ */
+.search-block-form {
+  display: none;
+}
+
+@media screen and (min-width: 48em) {
+  .search-block-form {
+    display: block;
+  }
+}
+
+.search-block-form form {
+  display: flex;
+  margin-top: 1.3rem;
+  margin-bottom: 1.2rem;
+}
+
+.search-iconwrap {
+  margin-left: -7px;
+}
+
+@media screen and (min-width: 48em) {
+  .search-iconwrap {
+    display: none;
+  }
+}
+
+.search-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 40px;
+  height: 40px;
+  margin-right: -7px;
+  padding-right: 7px;
+}
+.search-link:focus,
+.search-link:hover {
+  background-color: #fff;
+}
+.search-link svg {
+  display: block;
+  width: 26px;
+  height: auto;
+}
+
+.search-block-form .form-type-search {
+  margin-top: 0;
+  margin-bottom: 0;
+  border: 1px solid #dbdbdb;
+  border-top-left-radius: 3px; /* LTR */
+  border-bottom-right-radius: 3px; /* LTR */
+}
+[dir="rtl"] .search-block-form .form-type-search {
+  border-top-left-radius: 0;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 0;
+}
+
+.search-block-form .form-search {
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 7px 8px 7px 32px;
+  color: #464646;
+  border: 2px solid #fff;
+  background: url(../images/svg/search.svg) no-repeat 0.5em center #fff;
+  font-size: 0.875rem;
+  line-height: normal;
+}
+
+@media screen and (min-width: 48em) {
+  .search-block-form .form-search {
+    width: 20rem;
+  }
+}
+
+.search-block-form .form-search:focus {
+  border: 2px solid #008068;
+  border-top-left-radius: 2px; /* LTR */
+  border-bottom-left-radius: 2px; /* LTR */
+}
+[dir="rtl"] .search-block-form .form-search:focus {
+  border-top-left-radius: 0;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 0;
+}
+
+.form-search::placeholder {
+  opacity: 1;
+}
+.form-type-search .form-search {
+  box-sizing: border-box;
+}
+
+.search-block-form .form-actions {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #dbdbdb;
+  border-right: 1px solid #dbdbdb; /* LTR */
+  border-bottom: 1px solid #dbdbdb;
+  border-top-right-radius: 3px; /* LTR */
+  border-bottom-right-radius: 3px; /* LTR */
+}
+[dir="rtl"] .search-block-form .form-actions {
+  border-right: none;
+  border-left: 1px solid #dbdbdb;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 3px;
+}
+.search-block-form .form-actions .button {
+  margin: 0;
+}
+.search-block-form .form-submit {
+  margin: 0;
+  padding: 0.6em 1.25em 0.4em;
+  transition:
+    background-color 0.5s ease,
+    border 0.5s ease;
+  color: #000;
+  border: 2px solid #fff;
+  background-color: #fff;
+  font-size: 0.875rem;
+}
+
+@media screen and (min-width: 48em) {
+  .search-block-form .form-submit {
+    border-top-left-radius: 0; /* LTR */
+    border-bottom-left-radius: 0; /* LTR */
+  }
+  [dir="rtl"] .search-block-form .form-submit {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 3px;
+  }
+}
+
+.search-block-form .form-submit:focus,
+.search-block-form .form-submit:hover {
+  margin: 0;
+  border: 2px solid #008068;
+  outline-offset: 2px;
+  background-color: #e6eee0;
+}
+
+/**
+ * Account menu.
+ *
+ * Ported from core Umami's `menu-account.css`.
+ */
+@media screen and (min-width: 48em) {
+  .menu--account {
+    display: block;
+    text-align: right; /* LTR */
+  }
+  [dir="rtl"] .menu--account {
+    text-align: left;
+  }
+}
+.menu-account {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  line-height: 1.5;
+}
+.menu-account__item + .menu-account__item {
+  margin-left: 1em; /* LTR */
+}
+[dir="rtl"] .menu-account__item + .menu-account__item {
+  margin-right: 1em;
+  margin-left: 0;
+}
+.menu-account__link,
+.menu-account__link:hover,
+.menu-account__link:focus {
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+}
+.menu-account__link:hover,
+.menu-account__link:focus {
+  text-decoration: underline;
+}
+
+/**
+ * Main menu.
+ *
+ * Ported from core Umami's `menu-main.css`.
+ */
+.menu-main {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  color: #000;
+  font-family: "Scope One", Georgia, serif;
+  font-size: 1.266rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.menu-main__item {
+  margin-top: 0.8em;
+  text-align: center;
+}
+.menu-main__link {
+  display: inline-block;
+  margin: 5px 3px;
+  padding-bottom: 0.15em;
+  transition: all 0.2s;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: solid 0.15em transparent;
+  background-color: inherit;
+}
+.menu-main__link:hover,
+.menu-main__link.is-active:hover,
+.menu-main__link:focus {
+  text-decoration: none;
+  color: #da3c13;
+  border-bottom-color: #da3c13;
+  background-color: inherit;
+}
+.menu-main__link:active,
+.menu-main__link.is-active {
+  text-decoration: none;
+  border-bottom-color: #da3c13;
+}
+
+@media screen and (min-width: 48em) {
+  .menu-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .menu-main__item {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .menu-main__item + .menu-main__item {
+    margin-left: 2.5em; /* LTR */
+  }
+  [dir="rtl"] .menu-main__item + .menu-main__item {
+    margin-right: 2.5em;
+    margin-left: 0;
+  }
+}
+
+/* Menu active trail parity for view/node pages (where active trail is flaky). */
+body.path-recipes #block-mercury-main-menu .menu-main__link[href$="/recipes"],
+body.page-node-type-recipe #block-mercury-main-menu .menu-main__link[href$="/recipes"],
+body.path-articles #block-mercury-main-menu .menu-main__link[href$="/articles"],
+body.page-node-type-article #block-mercury-main-menu .menu-main__link[href$="/articles"],
+body.path-search #block-mercury-main-menu .menu-main__link[href$="/search/node"] {
+  border-bottom-color: #da3c13;
+}
+
+/*
+ * Listing page banner parity: port Umami's banner component styling.
+ */
+.banner__content {
+  margin: 1rem 4%;
+  font-size: 1.188em;
+}
+
+.banner__title {
+  margin: 0 0 0.5em 0;
+  font-family: var(--font-serif);
+  font-size: 1.777em;
+  font-weight: 400;
+  line-height: 1.2em;
+}
+
+.banner__content a {
+  display: inline-block;
+  margin: 0;
+  padding: 0.7rem 1.3rem;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  color: #fff;
+  border: 2px solid #d93760;
+  border-radius: 3px;
+  background-color: #d93760;
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  line-height: normal;
+}
+
+.banner__content a:hover,
+.banner__content a:active,
+.banner__content a:focus {
+  transition: background-color 0.5s ease;
+  text-decoration: none;
+  color: #000;
+  outline-color: #fff;
+  outline-offset: 2px;
+  background-color: #fcece7;
+}
+
+@media screen and (min-width: 48rem) {
+  .banner {
+    position: relative; /* Anchor absolutely positioned background image. */
+    background-color: #464646;
+  }
+
+  .banner__inner {
+    display: flex;
+    align-items: center;
+    min-height: 54vw;
+    margin: auto;
+    padding: 0 4%;
+  }
+
+  .banner__content {
+    position: relative; /* Establish stacking context for overlay content. */
+    max-width: 50%;
+    margin: 0;
+    padding: 1.777em;
+    color: #fff;
+    border: 1px solid #464646;
+    background: rgb(0 0 0 / 0.42);
+  }
+
+  .banner__title,
+  .banner__content h1,
+  .banner__content h2,
+  .banner__content h3,
+  .banner__content h4,
+  .banner__content h5,
+  .banner__content h6 {
+    color: #fff;
+  }
+
+  .banner__image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media screen and (min-width: 60rem) {
+  .banner__content {
+    max-width: 41%;
+  }
+
+  .banner__inner {
+    min-height: 43vw;
+  }
+}
+
+@media screen and (min-width: 80rem) {
+  .banner__inner {
+    padding: 0;
+  }
+}
+
+/*
+ * Homepage parity: Mercury hero billboard should resemble Umami's banner block.
+ */
+body.path-frontpage .umami-hero-billboard__content {
+  margin: 1rem 4%;
+  padding: 1.5rem;
+  font-size: 1.188em;
+  color: #fff;
+  border: 1px solid #464646;
+  background: rgb(0 0 0 / 0.42);
+}
+
+body.path-frontpage .umami-hero-billboard__content h1,
+body.path-frontpage .umami-hero-billboard__content h2,
+body.path-frontpage .umami-hero-billboard__content h3,
+body.path-frontpage .umami-hero-billboard__content h4,
+body.path-frontpage .umami-hero-billboard__content h5,
+body.path-frontpage .umami-hero-billboard__content h6 {
+  color: #fff;
+}
+
+body.path-frontpage .umami-hero-billboard__content h2 {
+  margin: 0 0 0.5em 0;
+  font-family: var(--font-serif);
+  font-size: 1.777em;
+  font-weight: 400;
+  line-height: 1.2em;
+}
+
+@media screen and (min-width: 48rem) {
+  body.path-frontpage .umami-hero-billboard {
+    position: relative;
+    height: auto;
+    max-height: none;
+    min-height: 54vw;
+    background-color: #464646;
+    /* Ensure the background image with `z-[-1]` stays above this background. */
+    z-index: 0;
+  }
+
+  body.path-frontpage .umami-hero-billboard__content {
+    max-width: 50%;
+    margin: 0;
+    padding: 1.777em;
+  }
+}
+
+@media screen and (min-width: 60rem) {
+  body.path-frontpage .umami-hero-billboard__content {
+    max-width: 41%;
+  }
+
+  body.path-frontpage .umami-hero-billboard {
+    min-height: 43vw;
+  }
+}
+
+/*
+ * Homepage parity: Promoted items view styling (ported from Umami theme CSS).
+ * Scope tightly to this view's CSS classes.
+ */
+.view-promoted-items--single {
+  display: grid;
+  gap: 14px;
+  padding-block: 1rem 2rem;
+}
+
+@media screen and (min-width: 30rem) {
+  .view-promoted-items--single {
+    padding-block: 2rem 3rem;
+  }
+}
+
+@media screen and (min-width: 60rem) {
+  .view-promoted-items--single {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.view-promoted-items--double .view-content {
+  display: grid;
+  gap: 14px;
+}
+
+@media screen and (min-width: 30rem) {
+  .view-promoted-items--double .view-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/*
+ * Homepage parity: promoted items section should align to the 1200px container
+ * edge, not the 4% inner gutters.
+ */
+body.path-frontpage section:has(.view-promoted-items) .umami-section__container {
+  padding-inline: 0;
+}
+
+/*
+ * Umami components: Card, read-more, label-items.
+ *
+ * Ported from core's Umami theme so our CMS build can match the baseline
+ * markup/spacing while keeping the implementation in the theme (not modules).
+ */
+.umami-card {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #fcece7;
+  background-color: #fff;
+}
+
+.umami-card__content {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.umami-card__label-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.1rem;
+  margin: 0;
+  color: #5f635d;
+  font-size: 0.889rem;
+}
+
+.umami-card__read-more {
+  justify-self: start;
+}
+
+.umami-card__title {
+  flex-grow: 1;
+  margin: 0;
+  text-decoration: none;
+  color: #000;
+  font-family: var(--font-serif);
+  font-size: 1.424rem;
+  font-weight: 400;
+}
+
+.umami-card__title a {
+  text-decoration: none;
+  color: #000;
+  background-color: inherit;
+}
+
+.umami-card__title a:hover,
+.umami-card__title a:focus {
+  text-decoration: underline;
+  color: #000;
+}
+
+.umami-card__wrapper {
+  display: grid;
+  gap: 1rem;
+  grid-template-rows: 1fr auto auto;
+  height: 100%;
+}
+
+.umami-card--alt .umami-card__wrapper {
+  grid-template-rows: auto 1fr auto;
+}
+
+.umami-card .field--name-field-media-image {
+  line-height: 0;
+}
+
+.umami-card .field--name-field-media-image img {
+  display: block;
+  width: 100%;
+}
+
+/* Umami: fields with inline "meta" labels. */
+.label-items {
+  margin-bottom: 1.2em;
+}
+
+.label-items .field__items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.label-items .field__label,
+.label-items .field__item {
+  padding-right: 0.6rem;
+}
+
+/* Umami: read-more component. */
+.read-more {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  padding-right: 20px; /* LTR */
+  text-decoration: none;
+  text-transform: uppercase;
+  border-bottom: 1px solid transparent;
+  background-color: inherit;
+}
+
+[dir="rtl"] .read-more {
+  padding-right: unset;
+  padding-left: 20px;
+}
+
+.read-more:focus,
+.read-more:hover {
+  text-decoration: none;
+  color: #008068;
+  border-bottom: 1px solid #008068;
+  background-color: inherit;
+}
+
+.read-more__icon {
+  position: absolute;
+  top: 50%;
+  right: 0; /* LTR */
+  width: 14px;
+  height: 14px;
+  margin-top: -7px;
+}
+
+[dir="rtl"] .read-more__icon {
+  right: unset;
+  left: 0;
+  transform: rotate(180deg);
+}
+
+.view-promoted-items--single .attachment-after,
+.view-promoted-items--single .views-element-container,
+.view-promoted-items--double,
+.view-promoted-items--double .view-content,
+.view-promoted-items--double .umami-card {
+  block-size: 100%;
+}
+
+/*
+ * Homepage parity: Recipe collections block (Umami content-bottom region).
+ * We keep Mercury's section component, but override tokens/colors locally.
+ */
+body.path-frontpage section:has(.view-recipe-collections) {
+  /* Match Umami greys for this band without changing global brand colors. */
+  --primary: #767775;
+  --primary-foreground: #fff;
+  z-index: 0;
+}
+
+body.path-frontpage section:has(.view-recipe-collections) .container {
+  padding-inline: 4%;
+}
+
+body.path-frontpage section:has(.view-recipe-collections) header {
+  text-align: center;
+}
+
+body.path-frontpage section:has(.view-recipe-collections) h2 {
+  text-align: center;
+}
+
+body.path-frontpage section:has(.view-recipe-collections) .views-field-name a {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+body.path-frontpage section:has(.view-recipe-collections) .views-field-name a:active,
+body.path-frontpage section:has(.view-recipe-collections) .views-field-name a:focus,
+body.path-frontpage section:has(.view-recipe-collections) .views-field-name a:hover {
+  text-decoration: underline;
+  outline-color: #fff;
+  background: transparent;
+}
+
+/* Umami: Frontpage view header. */
+.view-frontpage .view-header {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 0 1.266rem;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+@media screen and (min-width: 60em) {
+  .view-frontpage .view-header {
+    margin-bottom: 3rem;
+    padding-right: 2.37rem;
+    padding-left: 2.37rem;
+    font-size: 1.77rem;
+  }
+}
+
+/*
+ * Node parity: Umami nodes sit on a white surface within the beige body.
+ */
+.node {
+  background: #fff;
+}
+
+.node--view-mode-full {
+  margin: 0 auto;
+  max-width: min(
+    calc(
+      100vw - var(--drupal-displace-offset-left, 0px) -
+        var(--drupal-displace-offset-right, 0px) - 2rem
+    ),
+    1200px
+  );
+  padding: 1.266rem;
+  border-top: 1px solid #fcece7;
+  border-right: none;
+  border-bottom: 1px solid #fcece7;
+  border-left: none;
+  background-color: #fff;
+}
+
+@media screen and (min-width: 60rem) {
+  .node--view-mode-full {
+    padding: 2.37rem;
+    border-right: 1px solid #fcece7;
+    border-left: 1px solid #fcece7;
+  }
+}
+
+.node--view-mode-full .node__submitted {
+  margin-bottom: 1.2em;
+  font-size: 0.889em;
+}
+
+.node--view-mode-full .by-author::after {
+  display: inline-block;
+  margin: 0 0.25ex;
+  content: "•";
+  vertical-align: middle;
+  color: #7cbe8c;
+  font-size: 2em;
+}
+
+.node--view-mode-full .node__meta > article {
+  display: none;
+}
+
+.node--view-mode-full .field--name-field-media-image {
+  margin-bottom: 1.184rem;
+}
+
+@media screen and (min-width: 60rem) {
+  .node--view-mode-full .field--name-field-media-image {
+    margin-bottom: 2.369rem;
+  }
+}
+
+/*
+ * Article full parity: related articles view spacing.
+ */
+
+.view-articles-aside .views-row + .views-row {
+  margin-top: 14px;
+}
+
+/*
+ * Search page parity: port Umami's search-results.css (with minimal tweaks).
+ */
+.search-form + .item-list > em,
+.search-form + em {
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.2;
+  margin-block: 1.28rem;
+}
+
+.search-form > .form-wrapper {
+  margin-bottom: 1.28rem;
+  padding: 0.889rem;
+  border: 1px solid #fcece7;
+  background: #fff;
+}
+
+@media screen and (min-width: 48em) {
+  .search-form > .form-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin-bottom: 1.28rem;
+    padding: 1.28rem;
+  }
+}
+
+.search-form .form-type-search {
+  margin: 0 0 0.889rem 0;
+}
+
+@media screen and (min-width: 48em) {
+  .search-form .form-type-search {
+    flex-grow: 1;
+    margin: 0 1.28rem 0 0; /* LTR */
+  }
+
+  [dir="rtl"] .search-form .form-type-search {
+    margin-right: 0;
+    margin-left: 1.28rem;
+  }
+}
+
+.search-form .container-inline label,
+.search-form .container-inline div {
+  display: block;
+}
+
+.search-form .form-search {
+  min-width: 100%;
+  max-width: 100%;
+  margin: 0.25rem 0;
+  padding: 0.8rem 0.4rem;
+  color: #000;
+  border: 2px solid #767775;
+  font-size: 1rem;
+}
+
+.search-form .form-search:focus {
+  border: 2px solid #008068;
+}
+
+.search-form .form-search {
+  margin: 0;
+}
+
+.search-help-link {
+  display: inline-block;
+  margin: 1.28rem;
+}
+
+.search-form + h2 {
+  margin: 0 1.28rem 1.28rem;
+}
+
+.search-form + h2 + ol {
+  padding: 0;
+  list-style: none;
+}
+
+.search-form + h2 + ol > li {
+  margin: 0 0 1rem 0;
+  padding: 1.28rem;
+  border: 1px solid #fcece7;
+  background: #fff;
+}
+
+.search-form + h2 + ol > li h3 {
+  margin: 0 0 0.5rem 0;
+  font-family: var(--font-serif);
+  font-size: 1.424rem;
+  font-weight: 400;
+}
+
+.search-form + h2 + ol > li h3 a {
+  text-decoration: underline;
+  color: #008068;
+  background-color: inherit;
+}
+
+.search-form + h2 + ol > li p {
+  margin: 0;
+}
+
+.search-form + h2 + ol > li p + p {
+  margin-top: 1.28rem;
+}
+
+/*
+ * Content-bottom parity: Recipe collections band.
+ *
+ * Match the classic Umami block styling.
+ */
+#block-mercury-views-block-recipe-collections-block {
+  padding: 3rem 4%;
+  color: #fff;
+  background: #767775;
+}
+
+#block-mercury-views-block-recipe-collections-block .block__title {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+#block-mercury-views-block-recipe-collections-block .views-field-name a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+#block-mercury-views-block-recipe-collections-block .views-field-name a:active,
+#block-mercury-views-block-recipe-collections-block .views-field-name a:focus,
+#block-mercury-views-block-recipe-collections-block .views-field-name a:hover {
+  text-decoration: underline;
+  outline-color: #fff;
+  background: transparent;
+}
+
+/*
+ * Footer parity: Use Umami's grey footer band styling for Mercury's footer
+ * region blocks.
+ */
+.layout-footer {
+  padding: 2rem 4%;
+  text-align: center;
+  color: #fff;
+  background-color: #5f635d;
+  font-size: 0.9rem;
+}
+
+.region-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.28rem;
+}
+
+@media screen and (min-width: 60rem) {
+  .layout-footer {
+    text-align: left;
+  }
+
+  .region-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+  }
+}
+
+@media screen and (min-width: 80rem) {
+  .layout-footer {
+    padding: 2rem 0;
+  }
+}
+
+:where(.layout-footer) a {
+  color: #fff;
+  background-color: inherit;
+  font-weight: 400;
+}
+
+:where(.layout-footer) a:active,
+:where(.layout-footer) a:focus,
+:where(.layout-footer) a:hover {
+  outline-color: #fff;
+  background-color: #000;
+}
+
+@media screen and (min-width: 60rem) {
+  .block-type-footer-promo-block {
+    overflow: hidden;
+    flex-basis: 60%;
+  }
+
+  .block-system-menu-blockfooter {
+    flex-basis: 25%;
+  }
+}
+
+/*
+ * Footer promo block: port Umami footer-block component styles.
+ */
+.footer-block {
+  font-size: 0.9rem;
+}
+
+.footer-block__link {
+  color: #fff;
+  background-color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-block__link::after {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  content: "";
+  vertical-align: middle;
+  background: url(../images/svg/pointer--white.svg)
+    no-repeat center center;
+}
+
+.footer-block__link:active,
+.footer-block__link:focus,
+.footer-block__link:hover {
+  color: #fff;
+}
+
+.footer-block__title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+@media screen and (min-width: 60rem) {
+  .footer-block__title {
+    padding-top: 2rem;
+  }
+}
+
+.footer-block__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+@media screen and (min-width: 60rem) {
+  .footer-block__wrapper {
+    flex-direction: row;
+  }
+}
+
+/*
+ * Bottom region parity: Disclaimer band (white background below the footer).
+ */
+.layout-bottom {
+  overflow: hidden;
+  padding: 2rem 4%;
+  color: #464646;
+  background: #fff;
+}
+
+@media screen and (min-width: 80rem) {
+  .layout-bottom {
+    padding: 2rem 0;
+  }
+}
+
+#block-mercury-disclaimer p {
+  margin: 0 0 0.75rem 0;
+}
+
+#block-mercury-disclaimer p:last-child {
+  margin-bottom: 0;
+}
+
+.disclaimer__disclaimer,
+.disclaimer__copyright {
+  display: block;
+  text-align: center;
+  font-size: 0.94rem;
+}
+
+@media screen and (min-width: 75rem) {
+  .disclaimer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .disclaimer__disclaimer,
+  .disclaimer__copyright {
+    margin-bottom: 0;
+    text-align: start;
+  }
+
+  .disclaimer__disclaimer {
+    max-width: 40%;
+    margin-left: 0.5rem;
+  }
+
+  [dir="rtl"] .disclaimer__disclaimer {
+    margin-right: 0.5rem;
+    margin-left: 0;
+  }
+
+  .disclaimer__copyright {
+    width: 25%;
+  }
+}
+
+/*
+ * Main content area parity: match Umami's container width + gutters.
+ *
+ * Mercury constrains `.region-content` to a smaller max-width (1024px) which
+ * forces Views responsive grids to drop from 4 columns to 3 at ~1200px
+ * viewports. Umami's layout uses a 1200px container (minus 2rem) with 4%
+ * gutters, so we restore that behavior here.
+ */
+.region-content {
+  max-width: min(
+    calc(
+      100vw - var(--drupal-displace-offset-left, 0px) -
+        var(--drupal-displace-offset-right, 0px) - 2rem
+    ),
+    1200px
+  );
+  margin: auto;
+  padding-inline: 4%;
+  padding-block: 0 2.37rem;
+}
+
+@media screen and (min-width: 80rem) {
+  .region-content {
+    padding-inline: 0;
+  }
+}
+
+/* Match Umami container width. */
+.container {
+  max-width: min(
+    calc(
+      100vw - var(--drupal-displace-offset-left, 0px) -
+        var(--drupal-displace-offset-right, 0px) - 2rem
+    ),
+    1200px
+  );
+  margin: auto;
+}
+
+/* Match Umami's responsive side gutters (4% until the 1200px container fits). */
+.umami-container {
+  padding-inline: 4%;
+}
+
+@media screen and (min-width: 80rem) {
+  .umami-container {
+    padding-inline: 0;
+  }
+}
+
+/*
+ * Umami Mercury custom SDC components.
+ */
+
+.umami-recipe-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+
+.umami-recipe-meta__item {
+  margin: 0;
+}
+
+.umami-recipe-meta__term {
+  margin: 0 0 0.25rem 0;
+  font-family: var(--font-serif);
+  font-size: 0.889rem;
+  line-height: 1.2;
+  color: #000;
+}
+
+.umami-recipe-meta__value {
+  margin: 0;
+}
+
+.umami-ingredients-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.umami-ingredients-list li {
+  margin: 0.25rem 0;
+}

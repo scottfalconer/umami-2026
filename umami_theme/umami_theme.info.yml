@@ -1,0 +1,22 @@
+name: 'Umami Theme'
+type: theme
+'base theme': false
+libraries:
+  - umami_theme/global
+logo: logo.svg
+description: 'Umami look-and-feel for the Umami 2026 Drupal CMS site template (Mercury starterkit fork).'
+core_version_requirement: ^11
+generator: 'mercury:1.0.0'
+regions:
+  pre_header: Pre-header
+  header: Header
+  banner_top: Banner top
+  highlighted: Highlighted
+  content: Content
+  sidebar_first: Sidebar first
+  sidebar_second: Sidebar second
+  content_bottom: Content bottom
+  footer: Footer
+  bottom: Bottom
+dependencies:
+  - 'cva:cva'

@@ -1,0 +1,70 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 0a0d273c-3573-410f-9437-f20889018ec6
+  bundle: image
+  default_langcode: en
+  depends:
+    58fc756a-d1c6-4d25-b952-5e70e0ae6dd9: file
+    cb1c4cea-e332-4c34-8c0c-00ffb8e268c6: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Supermarket Savvy Umami'
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_media_image:
+    -
+      alt: 'Leafy greens presented on supermarket produce shelving'
+      title: ''
+      width: 768
+      height: 512
+      entity: 58fc756a-d1c6-4d25-b952-5e70e0ae6dd9
+translations:
+  es:
+    status:
+      -
+        value: true
+    uid:
+      -
+        target_id: 0
+    name:
+      -
+        value: 'El verdadero negocio para comprar en el supermercado'
+    revision_translation_affected:
+      -
+        value: true
+    path:
+      -
+        langcode: es
+        alias: null
+    content_translation_source:
+      -
+        value: und
+    content_translation_outdated:
+      -
+        value: false
+    field_media_image:
+      -
+        alt: 'Verduras de hoja verde presentadas en la estantería del supermercado.'
+        title: ''
+        width: 768
+        height: 512
+        entity: cb1c4cea-e332-4c34-8c0c-00ffb8e268c6

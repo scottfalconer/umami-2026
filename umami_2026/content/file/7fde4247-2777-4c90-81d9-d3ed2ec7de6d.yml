@@ -1,0 +1,21 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 7fde4247-2777-4c90-81d9-d3ed2ec7de6d
+  default_langcode: en
+default:
+  filename:
+    -
+      value: vegan-chocolate.jpg
+  uri:
+    -
+      value: 'public://vegan-chocolate.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 65650
+  status:
+    -
+      value: true

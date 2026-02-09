@@ -1,0 +1,70 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: abb9689c-f68e-4ef9-b577-ffed469afdb8
+  bundle: image
+  default_langcode: en
+  depends:
+    23e7f54b-8615-4ec9-8671-a3811b16ca50: file
+    5599f26f-2745-4562-ac04-82dabe20c0ba: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Heritage Carrots'
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_media_image:
+    -
+      alt: 'Purple, orange, yellow and white heritage carrots'
+      title: ''
+      width: 768
+      height: 511
+      entity: 23e7f54b-8615-4ec9-8671-a3811b16ca50
+translations:
+  es:
+    status:
+      -
+        value: true
+    uid:
+      -
+        target_id: 0
+    name:
+      -
+        value: 'Un aplauso para las zanahorias'
+    revision_translation_affected:
+      -
+        value: true
+    path:
+      -
+        langcode: es
+        alias: null
+    content_translation_source:
+      -
+        value: und
+    content_translation_outdated:
+      -
+        value: false
+    field_media_image:
+      -
+        alt: 'Zanahorias moradas, naranjas, amarillas y blancas.'
+        title: ''
+        width: 768
+        height: 511
+        entity: 5599f26f-2745-4562-ac04-82dabe20c0ba

@@ -1,0 +1,70 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 0c7b2d97-4819-47aa-926a-8e61f6d3aad0
+  bundle: image
+  default_langcode: en
+  depends:
+    26e5e75d-153d-46c8-808d-92c2b5f75076: file
+    c4261ccc-5278-453e-adaa-ff07ccb8875c: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Chocolate Brownie Umami'
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_media_image:
+    -
+      alt: 'A delicious chocolate brownie'
+      title: ''
+      width: 768
+      height: 511
+      entity: 26e5e75d-153d-46c8-808d-92c2b5f75076
+translations:
+  es:
+    status:
+      -
+        value: true
+    uid:
+      -
+        target_id: 0
+    name:
+      -
+        value: 'Percances al hornear - nuestros consejos para solucionar los problemas'
+    revision_translation_affected:
+      -
+        value: true
+    path:
+      -
+        langcode: es
+        alias: null
+    content_translation_source:
+      -
+        value: und
+    content_translation_outdated:
+      -
+        value: false
+    field_media_image:
+      -
+        alt: 'Un delicioso brownie de chocolate'
+        title: ''
+        width: 768
+        height: 511
+        entity: c4261ccc-5278-453e-adaa-ff07ccb8875c

@@ -1,0 +1,30 @@
+.DS_Store
+*.swp
+*.swo
+
+# Editor/IDE.
+.idea/
+.vscode/
+
+# Node/PHP build artifacts.
+node_modules/
+vendor/
+
+# Local Drupal project artifacts (this repo is packages only, but people often
+# clone it into a CMS site).
+web/sites/*/files/
+web/sites/*/settings*.php
+web/sites/*/services*.yml
+
+# Local DDEV project files.
+.ddev/
+
+# Peer-agents artifacts (local-only).
+.peer/
+
+# Local sandbox / testing artifacts.
+sandboxes/
+local-packages/
+token.txt
+*.sql
+*.sql.gz

@@ -1,0 +1,35 @@
+_meta:
+  version: '1.0'
+  entity_type: user
+  uuid: a125faf4-cad5-4846-a45a-ba343fec7046
+  default_langcode: en
+default:
+  preferred_langcode:
+    -
+      value: en
+  name:
+    -
+      value: 'Megan Collins Quinlan'
+  pass:
+    -
+      value: $2y$10$dBPvP9Lw0ASWu8RjoSyb.OYON2xIwNXrLLmRuXL8pYmKHu1CGuOZ2
+      pre_hashed: true
+      existing: null
+  mail:
+    -
+      value: megan.collins.quinlan@example.com
+  timezone:
+    -
+      value: America/Boise
+  status:
+    -
+      value: true
+  access:
+    -
+      value: 0
+  login:
+    -
+      value: 0
+  roles:
+    -
+      target_id: author

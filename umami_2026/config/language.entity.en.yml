@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - language.entity.und
+    - language.entity.zxx
+id: en
+label: English
+direction: ltr
+weight: 0
+locked: false

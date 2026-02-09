@@ -1,0 +1,70 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 29cdaec4-c19e-4de5-bd40-38b2f9abaa6c
+  bundle: image
+  default_langcode: en
+  depends:
+    e0a7e6f8-0861-4f99-a5f4-06c239c04376: file
+    b63757bb-91fb-41a5-83cf-930f40f80f31: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Mouth watering vegetarian pasta bake with rich tomato sauce and cheese toppings'
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_media_image:
+    -
+      alt: 'Mouth watering vegetarian pasta bake with rich tomato sauce and cheese toppings'
+      title: ''
+      width: 3000
+      height: 1571
+      entity: e0a7e6f8-0861-4f99-a5f4-06c239c04376
+translations:
+  es:
+    status:
+      -
+        value: true
+    uid:
+      -
+        target_id: 0
+    name:
+      -
+        value: 'Pasta vegetariana al horno con una rica salsa de tomate cubierta de queso que hará que se te haga la boca agua.'
+    revision_translation_affected:
+      -
+        value: true
+    path:
+      -
+        langcode: es
+        alias: null
+    content_translation_source:
+      -
+        value: und
+    content_translation_outdated:
+      -
+        value: false
+    field_media_image:
+      -
+        alt: 'Pasta vegetariana al horno con una rica salsa de tomate cubierta de queso que hará que se te haga la boca agua.'
+        title: ''
+        width: 3000
+        height: 1571
+        entity: b63757bb-91fb-41a5-83cf-930f40f80f31

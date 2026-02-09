@@ -1,0 +1,70 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: af141bc8-e30f-4486-900c-3f46025511f8
+  bundle: image
+  default_langcode: en
+  depends:
+    7a484922-17a4-4c70-b210-5d7ba27f6325: file
+    0b7bef22-f65a-49d5-ad54-b0a64f00eecb: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Mushrooms Umami'
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_media_image:
+    -
+      alt: 'A delightful selection of mushroom varieties laid out on a simple wooden plate'
+      title: ''
+      width: 768
+      height: 512
+      entity: 7a484922-17a4-4c70-b210-5d7ba27f6325
+translations:
+  es:
+    status:
+      -
+        value: true
+    uid:
+      -
+        target_id: 0
+    name:
+      -
+        value: 'Guía Umami de nuestras setas preferidas'
+    revision_translation_affected:
+      -
+        value: true
+    path:
+      -
+        langcode: es
+        alias: null
+    content_translation_source:
+      -
+        value: und
+    content_translation_outdated:
+      -
+        value: false
+    field_media_image:
+      -
+        alt: 'Una deliciosa selección de variedades de setas distribuidas en un sencillo plato de madera.'
+        title: ''
+        width: 768
+        height: 512
+        entity: 0b7bef22-f65a-49d5-ad54-b0a64f00eecb

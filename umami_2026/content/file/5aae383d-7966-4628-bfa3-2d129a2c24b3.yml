@@ -1,0 +1,21 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 5aae383d-7966-4628-bfa3-2d129a2c24b3
+  default_langcode: en
+default:
+  filename:
+    -
+      value: umami-bundle.png
+  uri:
+    -
+      value: 'public://umami-bundle.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 30490
+  status:
+    -
+      value: true

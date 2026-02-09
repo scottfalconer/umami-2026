@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:disclaimer_block:9b4dcd67-99f3-48d0-93c9-2c46648b29de'
+  module:
+    - block_content
+    - umami_2026_support
+  theme:
+    - umami_theme
+id: mercury_disclaimer
+theme: umami_theme
+region: bottom
+weight: 10
+provider: null
+plugin: umami_2026_block_content_uuid
+settings:
+  id: umami_2026_block_content_uuid
+  label: 'Umami disclaimer'
+  label_display: '0'
+  provider: umami_2026_support
+  block_uuid: 9b4dcd67-99f3-48d0-93c9-2c46648b29de
+  view_mode: full
+visibility: {  }

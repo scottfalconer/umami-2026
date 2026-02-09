@@ -1,0 +1,59 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 9ac26014-4112-4d30-bc7b-7e230e72499c
+  bundle: recipe_category
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: Accompaniments
+  weight:
+    -
+      value: 0
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /recipe-category/accompaniments
+      langcode: en
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  content_translation_uid:
+    -
+      target_id: 0
+translations:
+  es:
+    status:
+      -
+        value: true
+    name:
+      -
+        value: Acompañamientos
+    weight:
+      -
+        value: 0
+    revision_translation_affected:
+      -
+        value: true
+    path:
+      -
+        alias: /recipe-category/acompañamientos
+        langcode: es
+    content_translation_source:
+      -
+        value: und
+    content_translation_outdated:
+      -
+        value: false
+    content_translation_uid:
+      -
+        target_id: 0

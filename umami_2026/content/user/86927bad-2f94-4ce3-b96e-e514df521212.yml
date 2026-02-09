@@ -1,0 +1,38 @@
+_meta:
+  version: '1.0'
+  entity_type: user
+  uuid: 86927bad-2f94-4ce3-b96e-e514df521212
+  default_langcode: en
+default:
+  preferred_langcode:
+    -
+      value: en
+  preferred_admin_langcode:
+    -
+      value: en
+  name:
+    -
+      value: 'Margaret Hopper'
+  pass:
+    -
+      value: $2y$10$E9NkVK1M1NCnV9.U9oGyGOlreLIDNiYglK0id8zhU0RDQfb2q7aJ.
+      pre_hashed: true
+      existing: null
+  mail:
+    -
+      value: margaret.hopper@example.com
+  timezone:
+    -
+      value: America/Boise
+  status:
+    -
+      value: true
+  access:
+    -
+      value: 0
+  login:
+    -
+      value: 0
+  roles:
+    -
+      target_id: editor

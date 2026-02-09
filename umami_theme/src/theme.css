@@ -1,0 +1,113 @@
+/**
+ * @file theme.css
+ * shadcn/ui-compatible theme variables for Umami Theme.
+ *
+ * You can customize these values without rebuilding the compiled CSS.
+ * Tools like https://tweakcn.com can help generate these values. Copy this
+ * file to your web root, so it sits next to index.php, and clear Drupal's
+ * cache. Then, any changes you make in this file should be reflected right away.
+ */
+
+:root {
+  /* Umami body styles */
+  --background: #fbf5ee;
+  --foreground: #464646;
+
+  /* Umami surfaces */
+  --card: #fff;
+  --card-foreground: #000;
+
+  /* Umami brand */
+  --primary: #008068;
+  --primary-foreground: #fff;
+
+  /* Umami hover background and neutral surfaces */
+  --secondary: #e6eee0;
+  --secondary-foreground: #000;
+
+  /* Umami “primary” action color (button--primary) */
+  --accent: #d93760;
+  --accent-foreground: #fff;
+
+  --muted: #f4f2e9;
+  --muted-foreground: #767775;
+
+  --destructive: #cc2a00;
+  --destructive-foreground: #fff;
+
+  /* Umami cards use a light pink border */
+  --border: #fcece7;
+  --input: #d8d2c8;
+
+  /* Fonts */
+  --font-sans: "Source Sans Pro", Verdana, sans-serif;
+  --font-serif: "Scope One", Georgia, serif;
+  --font-mono: "Fira Mono", "Menlo", "Consolas", "Liberation Mono", monospace;
+
+  /* Umami-ish radius */
+  --radius: 3px;
+  --radius-2xl: 3px;
+
+  /* Umami generally prefers borders over heavy shadows */
+  --shadow-x: 0;
+  --shadow-y: 0;
+  --shadow-blur: 0;
+  --shadow-spread: 0;
+  --shadow-opacity: 0;
+  --shadow-color: #0000;
+  --shadow-2xs: 0 0 #0000;
+  --shadow-xs: 0 0 #0000;
+  --shadow-sm: 0 0 #0000;
+  --shadow: 0 0 #0000;
+  --shadow-md: 0 0 #0000;
+  --shadow-lg: 0 0 #0000;
+  --shadow-xl: 0 0 #0000;
+  --shadow-2xl: 0 0 #0000;
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+
+  /* Set navbar height for hero billboard overlay */
+  --navbar-height: calc(var(--spacing) * 15);
+
+  @media (min-width: 768px) {
+    --navbar-height: calc(var(--spacing) * 18);
+  }
+}
+
+.dark {
+  --background: oklch(0.13 0.043 265.132);
+  --foreground: oklch(1 0 89.876);
+  --card: oklch(0.208 0.042 266.359);
+  --card-foreground: var(--foreground);
+  --primary: oklch(0.547 0.246 262.866);
+  --primary-foreground: var(--foreground);
+  --secondary: oklch(0.704 0.04 256.993);
+  --secondary-foreground: oklch(0.13 0.043 265.132);
+  --muted: oklch(0.28 0.041 260.329);
+  --muted-foreground: oklch(0.967 0.003 264.542);
+  --accent: oklch(0.932 0.032 255.585);
+  --accent-foreground: oklch(0.13 0.043 265.132);
+  --destructive: oklch(0.6368 0.2078 25.3313);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.373 0.031 259.733);
+  --input: oklch(0.373 0.031 259.733);
+  --font-sans: "Source Sans Pro", Verdana, sans-serif;
+  --font-serif: "Scope One", Georgia, serif;
+  --font-mono: "Fira Mono", "Menlo", "Consolas", "Liberation Mono", monospace;
+  --radius: 3px;
+  --radius-2xl: 3px;
+  --shadow-x: 0;
+  --shadow-y: 0;
+  --shadow-blur: 0;
+  --shadow-spread: 0;
+  --shadow-opacity: 0;
+  --shadow-color: oklch(0 0 0);
+  --shadow-2xs: 0 0 #0000;
+  --shadow-xs: 0 0 #0000;
+  --shadow-sm: 0 0 #0000;
+  --shadow: 0 0 #0000;
+  --shadow-md: 0 0 #0000;
+  --shadow-lg: 0 0 #0000;
+  --shadow-xl: 0 0 #0000;
+  --shadow-2xl: 0 0 #0000;
+}

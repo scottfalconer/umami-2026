@@ -1,0 +1,70 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 6de7d3fb-0d9c-473d-a01b-cb6559b5a2f2
+  bundle: image
+  default_langcode: en
+  depends:
+    4e78029e-f2a5-42df-9741-b51b6e690607: file
+    7395269e-f53a-43a5-a635-422cc147261a: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Vegan chocolate and nut brownies'
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_media_image:
+    -
+      alt: 'A stack of chocolate and pecan brownies, sprinkled with pecan crumbs and crushed walnut, fresh out of the oven'
+      title: ''
+      width: 770
+      height: 512
+      entity: 4e78029e-f2a5-42df-9741-b51b6e690607
+translations:
+  es:
+    status:
+      -
+        value: true
+    uid:
+      -
+        target_id: 0
+    name:
+      -
+        value: 'Bizcochos veganos de chocolate y nueces'
+    revision_translation_affected:
+      -
+        value: true
+    path:
+      -
+        langcode: es
+        alias: null
+    content_translation_source:
+      -
+        value: und
+    content_translation_outdated:
+      -
+        value: false
+    field_media_image:
+      -
+        alt: 'Una pila de brownies de chocolate y nuez, rociados con migas de nuez y nuez triturada, recién sacados del horno'
+        title: ''
+        width: 770
+        height: 512
+        entity: 7395269e-f53a-43a5-a635-422cc147261a

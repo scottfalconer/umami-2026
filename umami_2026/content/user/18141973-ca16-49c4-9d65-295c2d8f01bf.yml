@@ -1,0 +1,38 @@
+_meta:
+  version: '1.0'
+  entity_type: user
+  uuid: 18141973-ca16-49c4-9d65-295c2d8f01bf
+  default_langcode: en
+default:
+  preferred_langcode:
+    -
+      value: es
+  preferred_admin_langcode:
+    -
+      value: es
+  name:
+    -
+      value: 'Gregorio Sánchez'
+  pass:
+    -
+      value: $2y$10$vHUAUQQgj3WTdfv6OjqmDe.zEcPhnIdYwHDAgOM/bHFjDx.nBNiwq
+      pre_hashed: true
+      existing: null
+  mail:
+    -
+      value: gregorio.sanchez@example.com
+  timezone:
+    -
+      value: America/Boise
+  status:
+    -
+      value: true
+  access:
+    -
+      value: 0
+  login:
+    -
+      value: 0
+  roles:
+    -
+      target_id: author

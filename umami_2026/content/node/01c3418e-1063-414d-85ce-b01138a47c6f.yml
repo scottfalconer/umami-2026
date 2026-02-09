@@ -1,0 +1,185 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 01c3418e-1063-414d-85ce-b01138a47c6f
+  bundle: recipe
+  default_langcode: en
+  depends:
+    24ca84ba-2c51-4457-a8e2-dcd8ebe0339d: user
+    6d06d15c-ee50-4aee-b87d-d48b271d5a4e: media
+    61b942d1-70b7-4fba-b5d6-1f636db0d6ed: taxonomy_term
+    7afa2ada-1bf6-4dad-8da3-16650e951bc2: taxonomy_term
+    2e06465e-36f4-4d5b-b32b-e8e7f4f54846: taxonomy_term
+default:
+  revision_uid:
+    -
+      entity: 24ca84ba-2c51-4457-a8e2-dcd8ebe0339d
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 24ca84ba-2c51-4457-a8e2-dcd8ebe0339d
+  title:
+    -
+      value: 'Watercress soup'
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  created:
+    -
+      value: 1768757201
+  moderation_state:
+    -
+      value: published
+  path:
+    -
+      alias: /recipes/watercress-soup
+      langcode: en
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_cooking_time:
+    -
+      value: 20
+  field_difficulty:
+    -
+      value: easy
+  field_ingredients:
+    -
+      value: '3 bunches watercress'
+    -
+      value: '3 potatoes'
+    -
+      value: '3 onions'
+    -
+      value: '2 leeks'
+    -
+      value: '800ml stock'
+    -
+      value: '5 tbsp crème fraîche'
+  field_media_image:
+    -
+      entity: 6d06d15c-ee50-4aee-b87d-d48b271d5a4e
+  field_number_of_servings:
+    -
+      value: 4
+  field_preparation_time:
+    -
+      value: 10
+  field_recipe_category:
+    -
+      entity: 61b942d1-70b7-4fba-b5d6-1f636db0d6ed
+  field_recipe_instruction:
+    -
+      value: |
+        <ol>
+          <li>Prepare the vegetables by peeling and chopping the potatoes, finely chopping the onions, leeks and garlic.</li>
+          <li>Heat a little oil in a pan and add the chopped vegetables, gently cooking them for about 5 minutes.</li>
+          <li>Add the vegetable stock to the same pan and turn up the heat until simmering, adding the watercress after about 10 minutes. Cook until all the vegetables are soft and easily mashed.</li>
+          <li>Liquidize the soup either with a hand blender or in a mixer, until smooth.</li>
+          <li>If the soup has cooled too much whilst being liquidized, stir in the crème fraîche and reheat before serving (otherwise serve straight away). Season to taste.</li>
+        </ol>
+      format: basic_html
+  field_summary:
+    -
+      value: 'A wonderfully simple and light soup, making the most of seasonal, local produce. '
+      format: basic_html
+  field_tags:
+    -
+      entity: 7afa2ada-1bf6-4dad-8da3-16650e951bc2
+    -
+      entity: 2e06465e-36f4-4d5b-b32b-e8e7f4f54846
+translations:
+  es:
+    revision_uid:
+      -
+        entity: 24ca84ba-2c51-4457-a8e2-dcd8ebe0339d
+    status:
+      -
+        value: true
+    uid:
+      -
+        entity: 24ca84ba-2c51-4457-a8e2-dcd8ebe0339d
+    title:
+      -
+        value: 'Sopa de berro'
+    promote:
+      -
+        value: true
+    sticky:
+      -
+        value: false
+    revision_translation_affected:
+      -
+        value: true
+    moderation_state:
+      -
+        value: published
+    path:
+      -
+        alias: /recipes/sopa-de-berro
+        langcode: es
+    content_translation_source:
+      -
+        value: und
+    content_translation_outdated:
+      -
+        value: false
+    field_cooking_time:
+      -
+        value: 20
+    field_difficulty:
+      -
+        value: easy
+    field_ingredients:
+      -
+        value: '3 racimos de berros'
+      -
+        value: '3 patatas'
+      -
+        value: '3 cebollas'
+      -
+        value: '2 puerros'
+      -
+        value: '800ml de caldo'
+      -
+        value: '75g de crème fraîche'
+    field_media_image:
+      -
+        entity: 6d06d15c-ee50-4aee-b87d-d48b271d5a4e
+    field_number_of_servings:
+      -
+        value: 4
+    field_preparation_time:
+      -
+        value: 10
+    field_recipe_category:
+      -
+        entity: 61b942d1-70b7-4fba-b5d6-1f636db0d6ed
+    field_recipe_instruction:
+      -
+        value: |
+          <ol>
+            <li>Prepare las verduras pelando y cortando las patatas y picando finamente las cebollas, los puerros y el ajo.</li>
+            <li>Caliente un poco de aceite en una sartén y agregue las verduras picadas, cocinándolas suavemente durante unos 5 minutos.</li>
+            <li>Agregue el caldo de verduras a la misma sartén y aumente el fuego hasta que hierva a fuego lento, agregando el berro después de unos 10 minutos. Cocine hasta que todas las verduras estén blandas y se muelan fácilmente.</li>
+            <li>Licuar la sopa con una batidora de mano o en un mezclador, hasta que esté suave.</li>
+            <li>Si la sopa se ha enfriado demasiado mientras se está licuando, agregue la crème fraîche y vuelva a calentarla antes de servirla (de lo contrario, sírvala de inmediato). Sazone a su gusto.</li>
+          </ol>
+        format: basic_html
+    field_summary:
+      -
+        value: 'Una sopa maravillosamente simple y ligera, que aprovecha al máximo los productos locales de temporada.'
+        format: basic_html
+    field_tags:
+      -
+        entity: 7afa2ada-1bf6-4dad-8da3-16650e951bc2
+      -
+        entity: 2e06465e-36f4-4d5b-b32b-e8e7f4f54846

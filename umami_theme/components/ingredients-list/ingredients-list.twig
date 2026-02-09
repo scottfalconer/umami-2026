@@ -1,0 +1,17 @@
+{#
+/**
+ * @file
+ * Render an array of ingredient strings.
+ */
+#}
+
+{% if ingredients is iterable and ingredients|length %}
+  <ul class="umami-ingredients-list">
+    {% for ingredient in ingredients %}
+      {% if ingredient is not empty %}
+        <li>{{ ingredient }}</li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endif %}
+

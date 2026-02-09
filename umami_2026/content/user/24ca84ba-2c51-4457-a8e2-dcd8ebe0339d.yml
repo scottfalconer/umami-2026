@@ -1,0 +1,35 @@
+_meta:
+  version: '1.0'
+  entity_type: user
+  uuid: 24ca84ba-2c51-4457-a8e2-dcd8ebe0339d
+  default_langcode: en
+default:
+  preferred_langcode:
+    -
+      value: en
+  name:
+    -
+      value: Umami
+  pass:
+    -
+      value: $2y$10$q5YehwUiaQvw6CHsp.g1/eJETjEL/16QANa5aQCJY1sJjpOtm/uFW
+      pre_hashed: true
+      existing: null
+  mail:
+    -
+      value: umami@example.com
+  timezone:
+    -
+      value: America/Boise
+  status:
+    -
+      value: true
+  access:
+    -
+      value: 0
+  login:
+    -
+      value: 0
+  roles:
+    -
+      target_id: author

@@ -1,0 +1,35 @@
+{% extends "block.html.twig" %}
+{#
+/**
+ * @file
+ * Theme override to display a banner_block custom block.
+ *
+ * This intentionally mirrors the markup hooks used by the classic Umami theme
+ * banner so we can reuse its CSS patterns on Mercury.
+ *
+ * Available variables:
+ * - content: Render array for the custom block fields.
+ * - attributes: HTML attributes for the block wrapper.
+ *
+ * @see template_preprocess_block()
+ */
+#}
+{% block content %}
+  {% set banner_title = content.field_title|render|striptags|trim %}
+
+  <div class="banner">
+    <div class="container">
+      <div class="banner__inner">
+        <div class="banner__image">
+          {{ content.field_media_image }}
+        </div>
+        <div class="banner__content">
+          {% if banner_title %}
+            <h2 class="banner__title">{{ banner_title }}</h2>
+          {% endif %}
+          {{ content|without(['field_media_image', 'field_title']) }}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

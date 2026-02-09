@@ -1,0 +1,70 @@
+{#
+/**
+ * @file
+ * Theme override to display a node (Umami-ish).
+ *
+ * This restores conventional `.node*` CSS hooks (removed from stable9) so we
+ * can reuse Umami styling on Mercury.
+ *
+ * We print the full-view H1 here (like classic Umami) and hide Mercury's
+ * header title via CSS on node routes.
+ *
+ * Available variables:
+ * - node: The node entity.
+ * - label: (optional) The title of the node.
+ * - content: Node content render array.
+ * - author_picture: The rendered author picture.
+ * - date: (optional) Themed creation date field.
+ * - author_name: (optional) Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes, title_attributes, content_attributes, author_attributes:
+ *   Attribute objects.
+ * - view_mode: View mode.
+ */
+#}
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+
+<article{{ attributes.addClass(classes) }}>
+
+  {{ title_prefix }}
+  {% if label %}
+    {% if view_mode == "full" %}
+      <header class="node__header">
+        <h1 class="page-title">
+          <span class="field field--name-title field--type-string field--label-hidden">{{ label }}</span>
+        </h1>
+      </header>
+    {% else %}
+      <h2{{ title_attributes }}>
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </h2>
+    {% endif %}
+  {% endif %}
+  {{ title_suffix }}
+
+  {% if display_submitted %}
+    {% set created_date = node.getCreatedTime|format_date('custom', 'jS F Y') %}
+    <footer class="node__meta">
+      {{ author_picture }}
+      <div{{ author_attributes.addClass('node__submitted') }}>
+        {% trans %}<span class="by-author">by {{ author_name }}</span> {{ created_date }}{% endtrans %}
+        {{ metadata }}
+      </div>
+    </footer>
+  {% endif %}
+
+  <div{{ content_attributes.addClass('node__content') }}>
+    {{ content }}
+  </div>
+
+</article>

@@ -1,0 +1,90 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 24dd3e5e-4792-4337-a90d-48c52652587d
+  bundle: page
+  default_langcode: en
+  depends:
+    238083d0-b62f-4e26-b432-1c40291ca5cb: user
+default:
+  revision_uid:
+    -
+      entity: 238083d0-b62f-4e26-b432-1c40291ca5cb
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 238083d0-b62f-4e26-b432-1c40291ca5cb
+  title:
+    -
+      value: 'About Umami'
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  moderation_state:
+    -
+      value: published
+  path:
+    -
+      alias: /about-umami
+      langcode: en
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_description:
+    -
+      value: 'Learn about Umami, a fictional food magazine created to demonstrate Drupal CMS.'
+  field_body:
+    -
+      value: '<p>Umami is a fictional food magazine that has been created to demonstrate how you might build a Drupal site using functionality provided ''out of the box''.</p><p>For more information visit <a href="https://www.drupal.org/docs/umami-drupal-demonstration-installation-profile">https://www.drupal.org/docs/umami-drupal-demonstration-installation-profile</a>.</p>'
+      format: basic_html
+translations:
+  es:
+    revision_uid:
+      -
+        entity: 238083d0-b62f-4e26-b432-1c40291ca5cb
+    status:
+      -
+        value: true
+    uid:
+      -
+        entity: 238083d0-b62f-4e26-b432-1c40291ca5cb
+    title:
+      -
+        value: 'Acerca de Umami'
+    promote:
+      -
+        value: false
+    sticky:
+      -
+        value: false
+    revision_translation_affected:
+      -
+        value: true
+    moderation_state:
+      -
+        value: published
+    path:
+      -
+        alias: /acerca-de-umami
+        langcode: es
+    content_translation_source:
+      -
+        value: und
+    content_translation_outdated:
+      -
+        value: false
+    field_description:
+      -
+        value: 'Conoce Umami, una revista ficticia creada para demostrar Drupal CMS.'
+    field_body:
+      -
+        value: '<p> Umami es una revista ficticia de alimentos que se ha creado para demostrar cómo se puede construir un sitio de Drupal con la funcionalidad que se proporciona ''fuera de la caja''. </p> <p> Para obtener más información, visite <a href="https://www.drupal.org/docs/umami-drupal-demonstration-installation-profile">https://www.drupal.org/docs/umami-drupal-demonstration-installation-profile</a>.</p> '
+        format: basic_html

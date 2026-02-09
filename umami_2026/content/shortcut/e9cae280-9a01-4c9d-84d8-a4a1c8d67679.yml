@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: shortcut
+  uuid: e9cae280-9a01-4c9d-84d8-a4a1c8d67679
+  bundle: default
+  default_langcode: en
+default:
+  title:
+    -
+      value: 'All content'
+  weight:
+    -
+      value: -19
+  link:
+    -
+      uri: 'internal:/admin/content'
+      title: null
+      options: {  }

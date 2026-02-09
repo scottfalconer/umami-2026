@@ -1,0 +1,35 @@
+_meta:
+  version: '1.0'
+  entity_type: user
+  uuid: 238083d0-b62f-4e26-b432-1c40291ca5cb
+  default_langcode: en
+default:
+  preferred_langcode:
+    -
+      value: en
+  name:
+    -
+      value: 'Samuel Adamson'
+  pass:
+    -
+      value: $2y$10$m5uDGhtCbIISHtxQQq9.FOPMF7qZRK7vzLbt1DWCzcWhcd4hfO0Bq
+      pre_hashed: true
+      existing: null
+  mail:
+    -
+      value: samuel.adamson@example.com
+  timezone:
+    -
+      value: America/Boise
+  status:
+    -
+      value: true
+  access:
+    -
+      value: 0
+  login:
+    -
+      value: 0
+  roles:
+    -
+      target_id: author

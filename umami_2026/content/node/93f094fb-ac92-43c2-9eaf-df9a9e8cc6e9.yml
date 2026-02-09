@@ -1,0 +1,212 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 93f094fb-ac92-43c2-9eaf-df9a9e8cc6e9
+  bundle: recipe
+  default_langcode: en
+  depends:
+    24ca84ba-2c51-4457-a8e2-dcd8ebe0339d: user
+    ab3f56e5-0b75-4753-95ae-8c1549c02543: media
+    fa3a76fa-7aed-432a-a185-a8f7ed8a3ab4: taxonomy_term
+    2e06465e-36f4-4d5b-b32b-e8e7f4f54846: taxonomy_term
+    cf0217f1-efdf-44ee-9837-499edfbc9210: taxonomy_term
+    5367f157-b4f5-492c-bf62-940101bcd1c9: taxonomy_term
+default:
+  revision_uid:
+    -
+      entity: 24ca84ba-2c51-4457-a8e2-dcd8ebe0339d
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 24ca84ba-2c51-4457-a8e2-dcd8ebe0339d
+  title:
+    -
+      value: 'Super easy vegetarian pasta bake'
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  created:
+    -
+      value: 1768670801
+  moderation_state:
+    -
+      value: published
+  path:
+    -
+      alias: /recipes/super-easy-vegetarian-pasta-bake
+      langcode: en
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_cooking_time:
+    -
+      value: 20
+  field_difficulty:
+    -
+      value: easy
+  field_ingredients:
+    -
+      value: '400g wholewheat pasta'
+    -
+      value: ' 1 onion'
+    -
+      value: ' 2 garlic cloves'
+    -
+      value: ' 1 pack vegetarian sausages'
+    -
+      value: ' 400g chopped tomatoes'
+    -
+      value: ' 50g sliced sun dried tomatoes'
+    -
+      value: ' 1 pinch sugar'
+    -
+      value: ' 3 tbsp red pesto'
+    -
+      value: ' 50g cheddar cheese'
+    -
+      value: ' Basil or mixed herbs'
+    -
+      value: ' 100g mozzarella'
+  field_media_image:
+    -
+      entity: ab3f56e5-0b75-4753-95ae-8c1549c02543
+  field_number_of_servings:
+    -
+      value: 4
+  field_preparation_time:
+    -
+      value: 5
+  field_recipe_category:
+    -
+      entity: fa3a76fa-7aed-432a-a185-a8f7ed8a3ab4
+  field_recipe_instruction:
+    -
+      value: |
+        <ol>
+          <li>In a large pan, boil the pasta in plenty of water until cooked.</li>
+          <li>Whilst the pasta is cooking, chop the onion and gently fry it with the garlic in a little oil until soft and the onion looks clear.</li>
+          <li>Add the vegetarian sausages. Once browned, remove and chop into chunky bites.</li>
+          <li>Pop the sausages back into the pan and add the tomatoes, sugar, pesto and sun dried tomatoes. Season to taste. Simmer until most of the water from the chopped tomatoes has gone.</li>
+          <li>Drain the pasta and add to the pan with the sausages and tomatoes. Stir in half of the cheddar and transfer to a shallow dish. Sprinkle with the rest of the cheddar and dot the sliced mozzarella over the top.</li>
+          <li>Grill for 10 minutes or until the cheese has melted and started to brown. Serve with basil leaves.</li>
+        </ol>
+      format: basic_html
+  field_summary:
+    -
+      value: 'A wholesome pasta bake is the ultimate comfort food. This delicious bake is super quick to prepare and an ideal midweek meal for all the family.'
+      format: basic_html
+  field_tags:
+    -
+      entity: 2e06465e-36f4-4d5b-b32b-e8e7f4f54846
+    -
+      entity: cf0217f1-efdf-44ee-9837-499edfbc9210
+    -
+      entity: 5367f157-b4f5-492c-bf62-940101bcd1c9
+translations:
+  es:
+    revision_uid:
+      -
+        entity: 24ca84ba-2c51-4457-a8e2-dcd8ebe0339d
+    status:
+      -
+        value: true
+    uid:
+      -
+        entity: 24ca84ba-2c51-4457-a8e2-dcd8ebe0339d
+    title:
+      -
+        value: 'Pasta vegetariana al horno súper fácil'
+    promote:
+      -
+        value: true
+    sticky:
+      -
+        value: false
+    revision_translation_affected:
+      -
+        value: true
+    moderation_state:
+      -
+        value: published
+    path:
+      -
+        alias: /recipes/pasta-vegetariana-horno-super-facil
+        langcode: es
+    content_translation_source:
+      -
+        value: und
+    content_translation_outdated:
+      -
+        value: false
+    field_cooking_time:
+      -
+        value: 20
+    field_difficulty:
+      -
+        value: easy
+    field_ingredients:
+      -
+        value: '400g pasta de trigo integral'
+      -
+        value: ' 1 cebolla'
+      -
+        value: ' 2 dientes de ajo'
+      -
+        value: ' 1 paquete de salchichas vegetarianas'
+      -
+        value: ' 400g tomates picados'
+      -
+        value: ' 50g rodajas de tomates secados al sol'
+      -
+        value: ' 1 pizca de azúcar'
+      -
+        value: ' 45g pesto rojo'
+      -
+        value: ' 50g queso cheddar'
+      -
+        value: ' Albahaca o hierbas mixtas'
+      -
+        value: ' 100g queso mozzarella'
+    field_media_image:
+      -
+        entity: ab3f56e5-0b75-4753-95ae-8c1549c02543
+    field_number_of_servings:
+      -
+        value: 4
+    field_preparation_time:
+      -
+        value: 5
+    field_recipe_category:
+      -
+        entity: fa3a76fa-7aed-432a-a185-a8f7ed8a3ab4
+    field_recipe_instruction:
+      -
+        value: |
+          <ol>
+            <li>En una sartén grande, hervir la pasta en abundante agua hasta que esté cocida.</li>
+            <li>Mientras se cocina la pasta, pica la cebolla y fríela suavemente con el ajo en un poco de aceite hasta que esté suave y la cebolla se vea clara.</li>
+            <li>Añadir las salchichas vegetarianas. Una vez dorado, retirar y picar en trozos grandes.</li>
+            <li>Pon las salchichas en la sartén y agrega los tomates, el azúcar, el pesto y los tomates secos. Sazone al gusto. Cocine a fuego lento hasta que la mayor parte del agua de los tomates picados se haya ido.</li>
+            <li>Escurrir la pasta y agregar a la sartén con las salchichas y los tomates. Agregue la mitad del queso cheddar y transfierelo a un plato poco profundo. Espolvoree con el resto del queso cheddar y salpique la mozzarella en rodajas por encima.</li>
+            <li>Asar durante 10 minutos o hasta que el queso se derrita y comience a dorarse. Servir con hojas de albahaca.</li>
+          </ol>
+        format: basic_html
+    field_summary:
+      -
+        value: 'Una pasta al horno es la comida más fácil y saludable. Este delicioso plato es súper rápido de preparar y una comida ideal entre semana para toda la familia.'
+        format: basic_html
+    field_tags:
+      -
+        entity: 2e06465e-36f4-4d5b-b32b-e8e7f4f54846
+      -
+        entity: cf0217f1-efdf-44ee-9837-499edfbc9210
+      -
+        entity: 5367f157-b4f5-492c-bf62-940101bcd1c9

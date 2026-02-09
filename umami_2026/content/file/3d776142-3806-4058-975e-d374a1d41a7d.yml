@@ -1,0 +1,21 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 3d776142-3806-4058-975e-d374a1d41a7d
+  default_langcode: en
+default:
+  filename:
+    -
+      value: watercress-soup-umami.jpg
+  uri:
+    -
+      value: 'public://watercress-soup-umami.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 31072
+  status:
+    -
+      value: true

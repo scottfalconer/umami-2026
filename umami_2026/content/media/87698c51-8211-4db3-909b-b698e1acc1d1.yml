@@ -1,0 +1,70 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 87698c51-8211-4db3-909b-b698e1acc1d1
+  bundle: image
+  default_langcode: en
+  depends:
+    5a8513d3-077c-423d-b04c-5ffd05edd5f6: file
+    06b09fc2-3b3c-472d-96b0-ed634c996751: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Crema catalana'
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_media_image:
+    -
+      alt: 'Typical Catalan dessert made from cream and egg yolks, covered with a traditional layer of caramelized sugar to provide a crispy contrast'
+      title: ''
+      width: 768
+      height: 512
+      entity: 5a8513d3-077c-423d-b04c-5ffd05edd5f6
+translations:
+  es:
+    status:
+      -
+        value: true
+    uid:
+      -
+        target_id: 0
+    name:
+      -
+        value: 'Crema catalana'
+    revision_translation_affected:
+      -
+        value: true
+    path:
+      -
+        langcode: es
+        alias: null
+    content_translation_source:
+      -
+        value: und
+    content_translation_outdated:
+      -
+        value: false
+    field_media_image:
+      -
+        alt: 'Postre típico catalán hecho de crema y yemas de huevo, cubierto con una capa tradicional de azúcar caramelizado para proporcionar un contraste crujiente.'
+        title: ''
+        width: 768
+        height: 512
+        entity: 06b09fc2-3b3c-472d-96b0-ed634c996751

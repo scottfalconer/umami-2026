@@ -1,0 +1,70 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 66538d52-0caa-475e-9132-e57aac5e6a3c
+  bundle: image
+  default_langcode: en
+  depends:
+    4e732e77-57f0-4bc6-9fa3-961dbf21bf48: file
+    81961853-9fd6-49af-bb0e-b835fbc1c409: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Oatmeal Fruit Syrop Topping'
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_media_image:
+    -
+      alt: 'Oatmeal topped with a vibrant mix of berries, nuts, and seeds'
+      title: ''
+      width: 768
+      height: 512
+      entity: 4e732e77-57f0-4bc6-9fa3-961dbf21bf48
+translations:
+  es:
+    status:
+      -
+        value: true
+    uid:
+      -
+        target_id: 0
+    name:
+      -
+        value: 'Dale a tu avena el cambio de imagen definitivo'
+    revision_translation_affected:
+      -
+        value: true
+    path:
+      -
+        langcode: es
+        alias: null
+    content_translation_source:
+      -
+        value: und
+    content_translation_outdated:
+      -
+        value: false
+    field_media_image:
+      -
+        alt: 'Avena con una mezcla vibrante de bayas, nueces y semillas'
+        title: ''
+        width: 768
+        height: 512
+        entity: 81961853-9fd6-49af-bb0e-b835fbc1c409

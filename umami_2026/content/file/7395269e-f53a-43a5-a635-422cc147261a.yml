@@ -1,0 +1,21 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 7395269e-f53a-43a5-a635-422cc147261a
+  default_langcode: en
+default:
+  filename:
+    -
+      value: vegan-chocolate-nut-brownies.jpg
+  uri:
+    -
+      value: 'public://vegan-chocolate-nut-brownies.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 109982
+  status:
+    -
+      value: true

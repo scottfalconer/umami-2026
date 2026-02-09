@@ -1,0 +1,70 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: fe100707-d878-4544-a352-78f67e9fe584
+  bundle: image
+  default_langcode: en
+  depends:
+    7e47b5fd-692a-40f4-bffb-2db296dc1eb1: file
+    5aae383d-7966-4628-bfa3-2d129a2c24b3: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: '3 issue bundle of the Umami food magazine'
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_media_image:
+    -
+      alt: '3 issue bundle of the Umami food magazine'
+      title: ''
+      width: 266
+      height: 236
+      entity: 7e47b5fd-692a-40f4-bffb-2db296dc1eb1
+translations:
+  es:
+    status:
+      -
+        value: true
+    uid:
+      -
+        target_id: 0
+    name:
+      -
+        value: 'Paquete de 3 ediciones de la revista de comida Umami'
+    revision_translation_affected:
+      -
+        value: true
+    path:
+      -
+        langcode: es
+        alias: null
+    content_translation_source:
+      -
+        value: und
+    content_translation_outdated:
+      -
+        value: false
+    field_media_image:
+      -
+        alt: 'Paquete de 3 ediciones de la revista de comida Umami'
+        title: ''
+        width: 266
+        height: 236
+        entity: 5aae383d-7966-4628-bfa3-2d129a2c24b3

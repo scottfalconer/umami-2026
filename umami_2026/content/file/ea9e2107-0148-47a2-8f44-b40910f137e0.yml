@@ -1,0 +1,21 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: ea9e2107-0148-47a2-8f44-b40910f137e0
+  default_langcode: en
+default:
+  filename:
+    -
+      value: mojito-mocktail.jpg
+  uri:
+    -
+      value: 'public://mojito-mocktail.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 49938
+  status:
+    -
+      value: true

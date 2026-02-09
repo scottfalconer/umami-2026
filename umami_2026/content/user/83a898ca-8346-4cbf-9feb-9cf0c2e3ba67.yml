@@ -1,0 +1,35 @@
+_meta:
+  version: '1.0'
+  entity_type: user
+  uuid: 83a898ca-8346-4cbf-9feb-9cf0c2e3ba67
+  default_langcode: en
+default:
+  preferred_langcode:
+    -
+      value: en
+  name:
+    -
+      value: 'Holly Foat'
+  pass:
+    -
+      value: $2y$10$rpGhO4oAnf0.BL1nRucGjO1Y3J/dOGvX.jBmKBSaK2vQatub.rj3m
+      pre_hashed: true
+      existing: null
+  mail:
+    -
+      value: holly.foat@example.com
+  timezone:
+    -
+      value: America/Boise
+  status:
+    -
+      value: true
+  access:
+    -
+      value: 0
+  login:
+    -
+      value: 0
+  roles:
+    -
+      target_id: author

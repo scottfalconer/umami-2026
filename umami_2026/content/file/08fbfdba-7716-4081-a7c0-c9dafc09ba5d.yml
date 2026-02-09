@@ -1,0 +1,21 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 08fbfdba-7716-4081-a7c0-c9dafc09ba5d
+  default_langcode: en
+default:
+  filename:
+    -
+      value: victoria-sponge-umami.jpg
+  uri:
+    -
+      value: 'public://victoria-sponge-umami.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 65418
+  status:
+    -
+      value: true

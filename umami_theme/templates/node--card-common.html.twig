@@ -1,0 +1,51 @@
+{#
+/**
+ * @file
+ * Umami parity: card_common view mode.
+ *
+ * This matches Umami's `node--card-common.html.twig` output order:
+ * title → read-more → content.
+ */
+#}
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'umami-card',
+  ]
+%}
+
+{% set title_markup = label ? label : content.field_title|default('') %}
+{% set read_more %}
+  {% trans %}View {{ node.type.entity.label() }}{% endtrans %}
+{% endset %}
+
+<article{{ attributes.addClass(classes).setAttribute('data-component-id', 'umami:card') }}>
+  <div class="umami-card__wrapper">
+    {{ title_prefix }}
+    {% if title_markup %}
+      <h2{{ title_attributes.addClass('umami-card__title', 'umami-title').setAttribute('data-component-id', 'umami:title') }}>
+        {{ title_markup }}
+      </h2>
+    {% endif %}
+    {{ title_suffix }}
+
+    <a{{ create_attribute({'class': ['umami-card__read-more', 'read-more']}).setAttribute('href', url).setAttribute('data-component-id', 'umami:read-more') }}>
+      {{ read_more }}
+      <span class="visually-hidden"> - {{ title_markup }}</span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" class="read-more__icon">
+        <path fill="none" d="M159.19 117.37v365.26L341.82 300 159.19 117.37z"/>
+        <path fill="#008068" d="M341.82 300L159.19 482.63v98.99L440.81 300 159.19 18.38v98.99L341.82 300z"/>
+      </svg>
+    </a>
+
+    <div{{ content_attributes.addClass('umami-card__content') }}>
+      {{ content }}
+    </div>
+  </div>
+</article>
+

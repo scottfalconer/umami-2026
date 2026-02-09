@@ -1,0 +1,38 @@
+_meta:
+  version: '1.0'
+  entity_type: user
+  uuid: 3052ca26-4ef3-490d-a5d5-863f4236e9fe
+  default_langcode: en
+default:
+  preferred_langcode:
+    -
+      value: es
+  preferred_admin_langcode:
+    -
+      value: es
+  name:
+    -
+      value: 'María García'
+  pass:
+    -
+      value: $2y$10$WFiyPpIECAnDesIF6NHAReZHSBu0oT8BvdFbQPd3l3/AiyPRfxx7e
+      pre_hashed: true
+      existing: null
+  mail:
+    -
+      value: maria.garcia@example.com
+  timezone:
+    -
+      value: America/Boise
+  status:
+    -
+      value: true
+  access:
+    -
+      value: 0
+  login:
+    -
+      value: 0
+  roles:
+    -
+      target_id: editor

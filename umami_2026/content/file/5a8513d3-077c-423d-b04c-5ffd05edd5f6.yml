@@ -1,0 +1,21 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 5a8513d3-077c-423d-b04c-5ffd05edd5f6
+  default_langcode: en
+default:
+  filename:
+    -
+      value: crema-catalana-umami.jpg
+  uri:
+    -
+      value: 'public://crema-catalana-umami.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 62307
+  status:
+    -
+      value: true

@@ -1,0 +1,28 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Recipe meta
+description: Render common recipe metadata (prep/cook time, servings, difficulty).
+group: Umami
+props:
+  type: object
+  properties:
+    preparation_time:
+      type: integer
+      title: Preparation time (minutes)
+      examples:
+        - 30
+    cooking_time:
+      type: integer
+      title: Cooking time (minutes)
+      examples:
+        - 45
+    number_of_servings:
+      type: integer
+      title: Number of servings
+      examples:
+        - 4
+    difficulty:
+      type: string
+      title: Difficulty label
+      examples:
+        - Medium
+

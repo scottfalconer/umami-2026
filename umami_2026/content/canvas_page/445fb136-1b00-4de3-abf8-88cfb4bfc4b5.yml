@@ -1,0 +1,60 @@
+_meta:
+  version: '1.0'
+  entity_type: canvas_page
+  uuid: 445fb136-1b00-4de3-abf8-88cfb4bfc4b5
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  owner:
+    -
+      target_id: 1
+  title:
+    -
+      value: About
+  path:
+    -
+      alias: /about
+      langcode: en
+  components:
+    - uuid: 178dde75-0d5e-4589-ace7-54a849f336f0
+      component_id: sdc.umami_theme.section
+      inputs:
+        columns: '100'
+        mobile_columns: '1'
+        width: '100%'
+        margin_block_start: '0'
+        margin_block_end: '0'
+        padding_block_start: '0'
+        padding_block_end: '0'
+        section_header: false
+        section_footer: false
+    - uuid: 4cee9c23-3853-49a8-a74b-8f54cf67603d
+      component_id: sdc.umami_theme.heading
+      parent_uuid: 178dde75-0d5e-4589-ace7-54a849f336f0
+      slot: main_slot
+      inputs:
+        heading_text: About
+        level: 1
+        text_color: default
+        text_size: heading-responsive-4xl
+        align: left
+        url: ''
+    - uuid: fae60005-6e5c-435d-8443-3150a9aa600b
+      component_id: sdc.umami_theme.text
+      parent_uuid: 178dde75-0d5e-4589-ace7-54a849f336f0
+      slot: main_slot
+      inputs:
+        text: |
+          <p>Umami is a fictional food magazine used as Drupal’s demo content set. Umami 2026 rebuilds that demo for Drupal CMS 2.0 using Canvas for page assembly and Mercury for design system components.</p>
+          <p>This template is meant as a starting point for new Drupal CMS projects.</p>
+        text_size: normal
+        text_color: default
+  created:
+    -
+      value: 1770613817
+  revision_translation_affected:
+    -
+      value: true
+

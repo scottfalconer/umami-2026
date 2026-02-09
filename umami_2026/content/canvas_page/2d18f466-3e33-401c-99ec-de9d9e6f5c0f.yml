@@ -1,0 +1,59 @@
+_meta:
+  version: '1.0'
+  entity_type: canvas_page
+  uuid: 2d18f466-3e33-401c-99ec-de9d9e6f5c0f
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  owner:
+    -
+      target_id: 1
+  title:
+    -
+      value: Articles
+  path:
+    -
+      alias: /articles
+      langcode: en
+  components:
+    - uuid: 590959f9-99aa-4991-91fd-00ef69c67354
+      component_id: sdc.umami_theme.section
+      inputs:
+        columns: '100'
+        mobile_columns: '1'
+        width: '100%'
+        margin_block_start: '0'
+        margin_block_end: '0'
+        padding_block_start: '0'
+        padding_block_end: '0'
+        section_header: false
+        section_footer: false
+    - uuid: 241dd5e0-d367-451b-af11-314e41446175
+      component_id: sdc.umami_theme.heading
+      parent_uuid: 590959f9-99aa-4991-91fd-00ef69c67354
+      slot: main_slot
+      inputs:
+        heading_text: Articles
+        level: 1
+        text_color: default
+        text_size: heading-responsive-4xl
+        align: left
+        url: ''
+    - uuid: 9639a5c8-efd0-4c78-b26d-13fbbd636481
+      component_id: block.views_block.featured_articles-block_1
+      parent_uuid: 590959f9-99aa-4991-91fd-00ef69c67354
+      slot: main_slot
+      inputs:
+        label: ''
+        label_display: '0'
+        views_label: ''
+        items_per_page: null
+  created:
+    -
+      value: 1770613817
+  revision_translation_affected:
+    -
+      value: true
+

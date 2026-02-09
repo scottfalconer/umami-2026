@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * Theme override to display the header region.
+ *
+ * Match the baseline Umami header behavior (burger + dropdown menu) to keep
+ * responsive output and spacing consistent across breakpoints.
+ *
+ * Available variables:
+ * - content: Rendered HTML for this region.
+ * - elements: A render array of region children keyed by block ID.
+ * - attributes: HTML attributes for the region wrapper.
+ * - region: The machine name of the region (from the theme .info.yml).
+ */
+#}
+{%
+  set classes = [
+    'region',
+    'region-' ~ region|clean_class,
+    'umami-header',
+  ]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+  <div class="umami-header__logo">
+    {{ elements.mercury_site_branding }}
+  </div>
+
+  <button
+    type="button"
+    class="umami-header__burger"
+    aria-controls="umami-header__dropdown"
+    aria-expanded="false"
+    aria-label="{{ 'Toggle the menu'|t }}"
+  >
+    {{ source(active_theme_path() ~ '/icons/burger.svg') }}
+  </button>
+
+  <div class="umami-header__dropdown">
+    {{ elements.mercury_main_menu }}
+  </div>
+</div>
+

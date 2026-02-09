@@ -1,0 +1,70 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 0b3e229d-75c6-4746-9692-4034a0aa07f0
+  bundle: image
+  default_langcode: en
+  depends:
+    f87f5f67-1b00-4015-990c-acaf02a853d1: file
+    ea9e2107-0148-47a2-8f44-b40910f137e0: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Mojito Mocktail'
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_media_image:
+    -
+      alt: 'Fresh mojito mocktail with garnish of mint leaves, ice, and sliced lime'
+      title: ''
+      width: 768
+      height: 512
+      entity: f87f5f67-1b00-4015-990c-acaf02a853d1
+translations:
+  es:
+    status:
+      -
+        value: true
+    uid:
+      -
+        target_id: 0
+    name:
+      -
+        value: 'Salta los espíritus con deliciosos cócteles sin alcohol'
+    revision_translation_affected:
+      -
+        value: true
+    path:
+      -
+        langcode: es
+        alias: null
+    content_translation_source:
+      -
+        value: und
+    content_translation_outdated:
+      -
+        value: false
+    field_media_image:
+      -
+        alt: 'Mocktail de mojito fresco con guarnición de hojas de menta, hielo y lima en rodajas'
+        title: ''
+        width: 768
+        height: 512
+        entity: ea9e2107-0148-47a2-8f44-b40910f137e0

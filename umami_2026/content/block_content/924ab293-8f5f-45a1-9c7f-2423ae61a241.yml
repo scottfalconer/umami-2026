@@ -1,0 +1,82 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: 924ab293-8f5f-45a1-9c7f-2423ae61a241
+  bundle: footer_promo_block
+  default_langcode: en
+  depends:
+    24dd3e5e-4792-4337-a90d-48c52652587d: node
+    fe100707-d878-4544-a352-78f67e9fe584: media
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Umami footer promo'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  content_translation_uid:
+    -
+      target_id: 0
+  field_content_link:
+    -
+      title: 'Find out more'
+      options: {  }
+      target_uuid: 24dd3e5e-4792-4337-a90d-48c52652587d
+  field_media_image:
+    -
+      entity: fe100707-d878-4544-a352-78f67e9fe584
+  field_summary:
+    -
+      value: 'Skills and know-how. Magazine exclusive articles, recipes and plenty of reasons to get your copy today.'
+  field_title:
+    -
+      value: 'Umami Food Magazine'
+translations:
+  es:
+    status:
+      -
+        value: true
+    info:
+      -
+        value: 'Umami Pie de Pagina Promocional'
+    reusable:
+      -
+        value: true
+    revision_translation_affected:
+      -
+        value: true
+    content_translation_source:
+      -
+        value: und
+    content_translation_outdated:
+      -
+        value: false
+    content_translation_uid:
+      -
+        target_id: 0
+    field_content_link:
+      -
+        uri: 'internal:/acerca-de-umami'
+        title: 'Más información'
+        options: {  }
+    field_media_image:
+      -
+        entity: fe100707-d878-4544-a352-78f67e9fe584
+    field_summary:
+      -
+        value: 'Trucos y consejos. Artículos exclusivos de la revista, recetas y una variedad de razones para conseguir tu copia hoy.'
+    field_title:
+      -
+        value: 'Revista de Comida Umami'

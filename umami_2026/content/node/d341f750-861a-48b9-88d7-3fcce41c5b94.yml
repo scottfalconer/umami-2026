@@ -1,0 +1,213 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: d341f750-861a-48b9-88d7-3fcce41c5b94
+  bundle: recipe
+  default_langcode: en
+  depends:
+    24ca84ba-2c51-4457-a8e2-dcd8ebe0339d: user
+    06eeba51-c707-4487-8294-765f2dd735b9: media
+    fa3a76fa-7aed-432a-a185-a8f7ed8a3ab4: taxonomy_term
+    08efb9d9-44d0-4309-92fb-6fb31fd746fb: taxonomy_term
+    f5c50796-a661-4872-a629-bdf273dff235: taxonomy_term
+default:
+  revision_uid:
+    -
+      entity: 24ca84ba-2c51-4457-a8e2-dcd8ebe0339d
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 24ca84ba-2c51-4457-a8e2-dcd8ebe0339d
+  title:
+    -
+      value: 'Deep mediterranean quiche'
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  created:
+    -
+      value: 1768498001
+  moderation_state:
+    -
+      value: published
+  path:
+    -
+      alias: /recipes/deep-mediterranean-quiche
+      langcode: en
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_cooking_time:
+    -
+      value: 30
+  field_difficulty:
+    -
+      value: medium
+  field_ingredients:
+    -
+      value: 'For the pastry:'
+    -
+      value: '280g plain flour'
+    -
+      value: '140g butter'
+    -
+      value: 'Cold water'
+    -
+      value: 'For the filling:'
+    -
+      value: '1 onion'
+    -
+      value: '2 garlic cloves'
+    -
+      value: 'Half a courgette'
+    -
+      value: '450ml soya milk'
+    -
+      value: '500g grated parmesan'
+    -
+      value: '2 eggs'
+    -
+      value: '200g sun dried tomatoes'
+    -
+      value: '100g feta'
+  field_media_image:
+    -
+      entity: 06eeba51-c707-4487-8294-765f2dd735b9
+  field_number_of_servings:
+    -
+      value: 8
+  field_preparation_time:
+    -
+      value: 40
+  field_recipe_category:
+    -
+      entity: fa3a76fa-7aed-432a-a185-a8f7ed8a3ab4
+  field_recipe_instruction:
+    -
+      value: |
+        <ol>
+          <li>Preheat the oven to 400°F/200°C. Starting with the pastry; rub the flour and butter together in a bowl until crumbling like breadcrumbs. Add water, a little at a time, until it forms a dough.</li>
+          <li>Roll out the pastry on a floured board and gently spread over your tin. Place in the fridge for 20 minutes before blind baking for a further 10.</li>
+          <li>Whilst the pastry is cooling, chop and gently cook the onions, garlic and courgette.</li>
+          <li>In a large bowl, add the soya milk, half the parmesan, and the eggs. Gently mix.</li>
+          <li>Once the pastry is cooked, spread the onions, garlic and sun dried tomatoes over the base and pour the eggs mix over. Sprinkle the remaining parmesan and careful lay the feta over the top. Bake for 30 minutes or until golden brown.</li>
+        </ol>
+      format: basic_html
+  field_summary:
+    -
+      value: "An Italian inspired quiche with sun dried tomatoes and courgette. A perfect light meal for a summer's day."
+      format: basic_html
+  field_tags:
+    -
+      entity: 08efb9d9-44d0-4309-92fb-6fb31fd746fb
+    -
+      entity: f5c50796-a661-4872-a629-bdf273dff235
+translations:
+  es:
+    revision_uid:
+      -
+        entity: 24ca84ba-2c51-4457-a8e2-dcd8ebe0339d
+    status:
+      -
+        value: true
+    uid:
+      -
+        entity: 24ca84ba-2c51-4457-a8e2-dcd8ebe0339d
+    title:
+      -
+        value: 'Quiche mediterráneo profundo'
+    promote:
+      -
+        value: true
+    sticky:
+      -
+        value: false
+    revision_translation_affected:
+      -
+        value: true
+    moderation_state:
+      -
+        value: published
+    path:
+      -
+        alias: /recipes/quiche-mediterráneo-profundo
+        langcode: es
+    content_translation_source:
+      -
+        value: und
+    content_translation_outdated:
+      -
+        value: false
+    field_cooking_time:
+      -
+        value: 30
+    field_difficulty:
+      -
+        value: medium
+    field_ingredients:
+      -
+        value: 'Para la masa:'
+      -
+        value: '280g harina normal'
+      -
+        value: '140g mantequilla'
+      -
+        value: 'Agua fría'
+      -
+        value: 'Para el relleno:'
+      -
+        value: '1 cebolla'
+      -
+        value: '2 dientes ajo'
+      -
+        value: 'Medio calabación'
+      -
+        value: '450ml leche de soja'
+      -
+        value: '500g queso parmesano'
+      -
+        value: '2 huevos'
+      -
+        value: '200g tomate deshidratado'
+      -
+        value: '100g queso feta'
+    field_media_image:
+      -
+        entity: 06eeba51-c707-4487-8294-765f2dd735b9
+    field_number_of_servings:
+      -
+        value: 8
+    field_preparation_time:
+      -
+        value: 40
+    field_recipe_category:
+      -
+        entity: fa3a76fa-7aed-432a-a185-a8f7ed8a3ab4
+    field_recipe_instruction:
+      -
+        value: |
+          <ol>
+            <li>Precaliente el horno a 200°C. Empezando por la pastelería; Frote la harina y la mantequilla en un tazón hasta que se desmoronen como migas de pan. Agregue el agua, poco a poco, hasta que forme una masa.</li>
+            <li>Extiende la masa sobre una tabla enharinada y extiende suavemente sobre tu molde. Coloque en la nevera durante 20 minutos antes de hornear a ciegas durante otros 10.</li>
+            <li>Mientras la masa se está enfriando, corte y cocine suavemente las cebollas, el ajo y el calabacín.</li>
+            <li>En un tazón grande, agregue la leche de soya, la mitad del queso parmesano y los huevos. Mezclar suavemente.</li>
+            <li>Una vez que la masa esté cocida, esparza las cebollas, el ajo y los tomates secos sobre la base y vierta la mezcla de los huevos. Espolvoree el queso parmesano restante y coloque cuidadosamente el feta sobre la parte superior. Hornear durante 30 minutos o hasta que estén doradas.</li>
+          </ol>
+        format: basic_html
+    field_summary:
+      -
+        value: 'Un quiche de inspiración italiana con tomates secos y calabacín. Una comida ligera perfecta para un día de verano.'
+        format: basic_html
+    field_tags:
+      -
+        entity: 08efb9d9-44d0-4309-92fb-6fb31fd746fb
+      -
+        entity: f5c50796-a661-4872-a629-bdf273dff235

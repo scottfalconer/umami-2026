@@ -1,0 +1,21 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 451d7a4f-39fb-40d5-9fdf-42b81044d8d8
+  default_langcode: en
+default:
+  filename:
+    -
+      value: thai-green-curry-umami.jpg
+  uri:
+    -
+      value: 'public://thai-green-curry-umami.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 38674
+  status:
+    -
+      value: true
