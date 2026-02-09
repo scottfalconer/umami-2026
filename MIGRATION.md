@@ -1,6 +1,13 @@
 # Umami 2026 (Drupal CMS 2.0) Migration Notes
 
-This install package is the current, commit-ready output of the “Umami, but for 2026” effort: an Umami-like demo built on **Drupal CMS 2.0 + Canvas**, packaged as a **recipe** plus a **theme** (forked from the Mercury starterkit).
+This repository contains the current **public preview** output of the “Umami, but for 2026” effort: an Umami-like demo built on **Drupal CMS 2.0 + Canvas**, packaged as a **recipe** plus a **theme** (forked from the Mercury starterkit).
+
+Start here:
+
+- Install + test instructions: `README.md`
+- What works / what’s left: `STATUS.md`
+- Upstream Canvas context: `UPSTREAM.md`
+- AI disclosure notes: `AI_PROCESS.md`
 
 ## What Exists (Source Of Truth vs Baseline)
 

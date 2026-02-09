@@ -47,8 +47,9 @@ Mitigation:
 
 Primary verification was:
 
-- Clean install on the tester sandbox using DDEV:
-  - `cd sandboxes/umami-2026-tester && ddev exec drush site:install ../recipes/umami_2026 -y`
+- Clean install in a Drupal CMS (`drupal/cms`) project using DDEV:
+  - `ddev exec drush site:install recipes/umami_2026 -y --site-name="Umami Food Magazine"`
+  - Note: in some local sandboxes, the Drupal CMS project lives under a subdirectory (for example `cms/`), so the recipe path becomes `cms/recipes/umami_2026`.
 - Smoke checks via HTTP requests for key pages and expected markup.
 
 ## Disclosure Guidance
