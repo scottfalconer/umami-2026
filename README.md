@@ -56,6 +56,8 @@ ddev exec drush site:install recipes/umami_2026 -y --site-name="Umami Food Magaz
 
 After install, visit the site at the DDEV URL. Key demo routes: `/`, `/articles`, `/recipes`, `/about`.
 
+To add more Drupal CMS features after install, use **Extend > Recommended** (`/admin/modules/browse/recipes`). This template also ships a small curated list in `umami_2026/recommended-add-ons.yml`.
+
 ## Re-running Clean Installs (Testing)
 
 ```bash
