@@ -19,6 +19,15 @@ web/sites/*/services*.yml
 # Local DDEV project files.
 .ddev/
 
+# Common local repo artifacts (do not commit).
+sandboxes/
+snapshots/
+local-packages/
+.drupal-contribute-fix/
+token.txt
+*.sql
+*.sql.gz
+
 # Peer-agents artifacts (local-only).
 .peer/
 

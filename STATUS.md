@@ -141,9 +141,25 @@ If you’re continuing this work in a new chat/thread, the next focused work ite
      - `claude-findings.md`
      - `MIGRATION.md`
 
+## Public Release Readiness
+
+### Safe to publish
+
+- **Secrets hygiene**: No passwords, API keys, tokens, private keys, or credentials detected in the repo. The `.gitignore` excludes local artifacts (`sandboxes/`, `local-packages/`, `token.txt`, `.ddev/`, `vendor/`, `node_modules/`).
+- **License**: GPL-2.0-or-later (matches Drupal ecosystem). Vendored fonts are SIL OFL 1.1 (compatible).
+- **Clean install verified**: exit 0 on Drupal CMS 2.0.0 / core 11.3.2 / Canvas 1.0.4.
+- **Install instructions**: README.md contains a single canonical DDEV-based quickstart.
+
+### Remaining blockers for a non-preview release
+
+1. **Naming/versioning**: Package names (`drupal/umami_2026`, `drupal/umami_theme`) and version constraints (`*@dev`) are placeholder/preview. Final names and stable versioning need to be decided before Drupal.org packaging.
+2. **CSS fragility**: Some overrides still target Tailwind utility classes (fragile across Mercury/Tailwind upgrades). Documented in STATUS.md and `claude-findings.md`.
+3. **Canvas workaround**: The `umamiGenerateCanvasComponents` config action works around an upstream Canvas hash-mismatch issue. Should be replaced when Canvas addresses the root cause (see `UPSTREAM.md`).
+4. **Asset redistribution**: Final review of media file redistribution rights recommended before non-preview release (see `ASSET_ATTRIBUTION.md`).
+
 ## Open Questions
 
-- How far to push Canvas adoption for the first “reviewable” release:
+- How far to push Canvas adoption for the first "reviewable" release:
   - Minimal: node full Canvas Content Templates + 2-3 key pages.
   - Maximal: everything (including listings and search) becomes Canvas templates.
 - Naming/versioning strategy for eventual community contribution (deferred for now per current direction).

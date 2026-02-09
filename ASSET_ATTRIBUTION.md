@@ -10,7 +10,7 @@ Unless otherwise noted, the assets and demo content originate from Drupal core's
 
 ### Fonts
 
-Vendored into: `umami-2026-install-package/umami_theme/fonts/`
+Vendored into: `umami_theme/fonts/`
 
 - `Source Sans Pro` (WOFF2 files prefixed `source-sans-pro-*`)
 - `Scope One` (WOFF2 file prefixed `scope-one-*`)
@@ -20,14 +20,14 @@ These font files match the versions shipped with Drupal core's Umami demo theme 
 ### Logo and SVG Icons
 
 Vendored into:
-- `umami-2026-install-package/umami_theme/logo.svg`
-- `umami-2026-install-package/umami_theme/icons/`
+- `umami_theme/logo.svg`
+- `umami_theme/icons/`
 
 These assets are carried forward from Drupal core's Umami demo theme to preserve the Umami visual identity in a Drupal CMS template context.
 
 ## Default Content (Including Media)
 
-Exported into: `umami-2026-install-package/umami_2026/content/`
+Exported into: `umami_2026/content/`
 
 The recipe includes default content entities (nodes, media, files, taxonomy terms, blocks, etc.) exported from the Umami demo content set.
 
