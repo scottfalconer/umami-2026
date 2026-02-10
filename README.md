@@ -1,4 +1,4 @@
-#Umami 2026 Site Template
+# Umami 2026 Site Template
 
 > **Status: Public Preview.**  This is a development snapshot intended for
 > review and testing. Package names (`drupal/umami_2026`, `drupal/umami_theme`)
