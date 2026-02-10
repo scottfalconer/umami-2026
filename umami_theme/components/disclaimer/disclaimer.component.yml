@@ -1,0 +1,20 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Disclaimer
+description: 'Umami-style disclaimer band (disclaimer + copyright text).'
+group: Umami
+props:
+  type: object
+  properties:
+    disclaimer:
+      type: string
+      title: Disclaimer (HTML)
+      pattern: "(.|\\r?\\n)*"
+      examples:
+        - '<strong>Umami Magazine &amp; Umami Publications</strong> is a fictional magazine and publisher for illustrative purposes only.'
+    copyright:
+      type: string
+      title: Copyright (HTML)
+      pattern: "(.|\\r?\\n)*"
+      examples:
+        - '&copy; 2026 Terms &amp; Conditions'
+

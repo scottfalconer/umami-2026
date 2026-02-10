@@ -75,7 +75,8 @@ config:
     system.site:
       umamiGenerateCanvasComponents: []
       simpleConfigUpdate:
-        page.front: /home
+        page:
+          front: /home
 
     # Disable Canvas components that aren't really useful in building pages or
     # content templates (mirrors Drupal CMS Starter's approach).
@@ -134,6 +135,11 @@ config:
       simpleConfigUpdate:
         logo:
           path: themes/contrib/umami_theme/logo.svg
+          url: null
+          use_default: false
+        favicon:
+          mimetype: image/svg+xml
+          path: themes/contrib/umami_theme/favicon.svg
           url: null
           use_default: false
 

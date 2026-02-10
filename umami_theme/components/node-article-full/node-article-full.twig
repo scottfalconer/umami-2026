@@ -1,0 +1,65 @@
+{#
+/**
+ * @file
+ * Article full wrapper.
+ *
+ * Canvas content templates render nodes without classic node wrapper markup.
+ * This component restores Umami's `node--view-mode-full` structure/classes so
+ * Umami parity CSS applies consistently.
+ */
+#}
+
+{% set created_date = date is not empty ? date|format_date('umami_dates') : '' %}
+
+{% set classes = classes|default([])|merge([
+  'node',
+  'node--type-article',
+  'node--view-mode-full'
+])|filter(v => v is not empty) %}
+
+{% set aside %}
+  {% block aside_slot %}{% endblock %}
+{% endset %}
+
+<article class="{{ classes|join(' ') }}" data-component-id="umami:node-article-full">
+  {% if title is not empty %}
+    <header class="node__header">
+      <h1 class="page-title">{{ title }}</h1>
+    </header>
+  {% endif %}
+
+  {% if author is not empty and created_date is not empty %}
+    <footer class="node__meta">
+      <div class="node__submitted">
+        {% trans %}<span class="by-author">by {{ author }}</span> {{ created_date }}{% endtrans %}
+      </div>
+    </footer>
+  {% endif %}
+
+  <div class="node__content">
+    <div class="umami-node-full__layout">
+      <div class="umami-node-full__main">
+        {% if media.src is not empty %}
+          <div class="field field--name-field-media-image field--type-image field--label-hidden">
+            {% include 'canvas:image' ignore missing with {
+              src: media.src,
+              alt: media.alt,
+              width: media.width,
+              height: media.height,
+              loading: 'eager'
+            } only %}
+          </div>
+        {% endif %}
+
+        {% block main_slot %}{% endblock %}
+      </div>
+
+      {% if aside|render|trim is not empty %}
+        <aside class="umami-node-full__aside layout-sidebar" role="complementary">
+          {{ aside }}
+        </aside>
+      {% endif %}
+    </div>
+  </div>
+</article>
+

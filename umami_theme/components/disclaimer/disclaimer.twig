@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * Umami-style disclaimer band.
+ */
+#}
+<div data-component-id="umami:disclaimer" class="disclaimer">
+  <div class="disclaimer__disclaimer">
+    {{ disclaimer|default('')|raw }}
+  </div>
+  <div class="disclaimer__copyright">
+    {{ copyright|default('')|raw }}
+  </div>
+</div>
+

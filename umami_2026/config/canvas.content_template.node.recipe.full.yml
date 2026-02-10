@@ -4,10 +4,8 @@ status: true
 dependencies:
   config:
     - canvas.component.block.views_block.related_recipes-related_recipes_block
-    - canvas.component.sdc.umami_theme.group
     - canvas.component.sdc.umami_theme.heading
-    - canvas.component.sdc.umami_theme.hero-side-by-side
-    - canvas.component.sdc.umami_theme.section
+    - canvas.component.sdc.umami_theme.node-recipe-full
     - canvas.component.sdc.umami_theme.text
     - canvas.component.sdc.umami_theme.ingredients-list
     - canvas.component.sdc.umami_theme.recipe-meta
@@ -37,66 +35,30 @@ content_entity_type_view_mode: full
 component_tree:
   0:
     uuid: 5889fd78-94b3-4a34-8131-f9430fa3b5c8
-    component_id: sdc.umami_theme.hero-side-by-side
-    component_version: eeec0b5e05c3f216
+    component_id: sdc.umami_theme.node-recipe-full
     inputs:
-      hero_flex_gap: large
-      hero_flex_direction_mobile: vertical
-      padding_block_start: '32'
-      padding_block_end: '32'
-      image_size: '3:2'
-      image_position: left
-      image_radius: small
+      title:
+        sourceType: dynamic
+        expression: 'ℹ︎␜entity:node:recipe␝title␞␟value'
       media:
         sourceType: dynamic
         expression: 'ℹ︎␜entity:node:recipe␝field_media_image␞␟{src↝entity␜␜entity:media:image␝field_media_image␞␟src_with_alternate_widths,alt↝entity␜␜entity:media:image␝field_media_image␞␟alt,width↝entity␜␜entity:media:image␝field_media_image␞␟width,height↝entity␜␜entity:media:image␝field_media_image␞␟height}'
-  '0:hero_slot:0':
+  '0:summary_slot:0':
     parent_uuid: 5889fd78-94b3-4a34-8131-f9430fa3b5c8
-    slot: hero_slot
-    uuid: d12ed5d0-457f-42a3-81fb-6fffcf5c980f
-    component_id: sdc.umami_theme.heading
-    component_version: ac2434a43cc31431
-    inputs:
-      heading_text:
-        sourceType: dynamic
-        expression: 'ℹ︎␜entity:node:recipe␝title␞␟value'
-      level: 1
-      text_color: default
-      text_size: heading-responsive-6xl
-      align: left
-      url: 'No URL'
-  '0:hero_slot:1':
-    parent_uuid: 5889fd78-94b3-4a34-8131-f9430fa3b5c8
-    slot: hero_slot
+    slot: summary_slot
     uuid: 6231560f-6237-4e79-a60c-835cd205e06b
     component_id: sdc.umami_theme.text
-    component_version: 21cbfe93d4622099
     inputs:
       text:
         sourceType: dynamic
         expression: 'ℹ︎␜entity:node:recipe␝field_summary␞␟processed'
       text_color: default
       text_size: normal
-  1:
-    uuid: a924ce04-a36e-44dc-a754-3c1df3ca6f79
-    component_id: sdc.umami_theme.section
-    component_version: 5ef4c2af9bd07348
-    inputs:
-      columns: '100'
-      mobile_columns: '1'
-      width: 80%
-      margin_block_start: '32'
-      margin_block_end: '32'
-      padding_block_start: '0'
-      padding_block_end: '0'
-      section_header: false
-      section_footer: false
-  '1:main_slot:0':
-    parent_uuid: a924ce04-a36e-44dc-a754-3c1df3ca6f79
-    slot: main_slot
+  '0:meta_slot:0':
+    parent_uuid: 5889fd78-94b3-4a34-8131-f9430fa3b5c8
+    slot: meta_slot
     uuid: 296c657a-8dff-4b5a-9942-ae3591fb77cc
     component_id: sdc.umami_theme.recipe-meta
-    component_version: 9b018ae6fb5f3087
     inputs:
       preparation_time:
         sourceType: dynamic
@@ -110,37 +72,11 @@ component_tree:
       difficulty:
         sourceType: dynamic
         expression: 'ℹ︎␜entity:node:recipe␝field_difficulty␞␟value'
-  2:
-    uuid: 479ed7dd-0602-468a-a3c3-86d0ce216395
-    component_id: sdc.umami_theme.section
-    component_version: 5ef4c2af9bd07348
-    inputs:
-      columns: 50-50
-      mobile_columns: '1'
-      width: 80%
-      margin_block_start: '32'
-      margin_block_end: '64'
-      padding_block_start: '0'
-      padding_block_end: '0'
-      section_header: false
-      section_footer: false
-  '2:main_slot:0':
-    parent_uuid: 479ed7dd-0602-468a-a3c3-86d0ce216395
-    slot: main_slot
-    uuid: 06581c45-3a5b-47f0-92a9-4ad5d44a602c
-    component_id: sdc.umami_theme.group
-    component_version: 334f085d3013dfb3
-    inputs:
-      flex_direction: column
-      flex_align: start
-      items_align: start
-      flex_gap: md
-  '2:main_slot:0:group_slot:0':
-    parent_uuid: 06581c45-3a5b-47f0-92a9-4ad5d44a602c
-    slot: group_slot
+  '0:ingredients_slot:0':
+    parent_uuid: 5889fd78-94b3-4a34-8131-f9430fa3b5c8
+    slot: ingredients_slot
     uuid: d801d0c1-78a5-45dd-8edf-5ecfef7603b1
     component_id: sdc.umami_theme.heading
-    component_version: ac2434a43cc31431
     inputs:
       heading_text: Ingredients
       level: 2
@@ -148,33 +84,20 @@ component_tree:
       text_size: heading-responsive-2xl
       align: left
       url: 'No URL'
-  '2:main_slot:0:group_slot:1':
-    parent_uuid: 06581c45-3a5b-47f0-92a9-4ad5d44a602c
-    slot: group_slot
+  '0:ingredients_slot:1':
+    parent_uuid: 5889fd78-94b3-4a34-8131-f9430fa3b5c8
+    slot: ingredients_slot
     uuid: a08e06cc-d7ec-4a78-b051-3f7e3d56f185
     component_id: sdc.umami_theme.ingredients-list
-    component_version: a21e9595f7ac156e
     inputs:
       ingredients:
         sourceType: dynamic
         expression: 'ℹ︎␜entity:node:recipe␝field_ingredients␞␟value'
-  '2:main_slot:1':
-    parent_uuid: 479ed7dd-0602-468a-a3c3-86d0ce216395
-    slot: main_slot
-    uuid: d4ccbb88-dc05-41f8-a19d-b760c5860616
-    component_id: sdc.umami_theme.group
-    component_version: 334f085d3013dfb3
-    inputs:
-      flex_direction: column
-      flex_align: start
-      items_align: start
-      flex_gap: md
-  '2:main_slot:1:group_slot:0':
-    parent_uuid: d4ccbb88-dc05-41f8-a19d-b760c5860616
-    slot: group_slot
+  '0:directions_slot:0':
+    parent_uuid: 5889fd78-94b3-4a34-8131-f9430fa3b5c8
+    slot: directions_slot
     uuid: 29537341-1277-496c-87fd-07d025b8b11b
     component_id: sdc.umami_theme.heading
-    component_version: ac2434a43cc31431
     inputs:
       heading_text: Directions
       level: 2
@@ -182,38 +105,22 @@ component_tree:
       text_size: heading-responsive-2xl
       align: left
       url: 'No URL'
-  '2:main_slot:1:group_slot:1':
-    parent_uuid: d4ccbb88-dc05-41f8-a19d-b760c5860616
-    slot: group_slot
+  '0:directions_slot:1':
+    parent_uuid: 5889fd78-94b3-4a34-8131-f9430fa3b5c8
+    slot: directions_slot
     uuid: d2c01f17-fa97-48a1-8df7-8807f9ceccf1
     component_id: sdc.umami_theme.text
-    component_version: 21cbfe93d4622099
     inputs:
       text:
         sourceType: dynamic
         expression: 'ℹ︎␜entity:node:recipe␝field_recipe_instruction␞␟processed'
       text_color: default
       text_size: normal
-  3:
-    uuid: 2e9e7b6d-0b6b-4c7a-bc91-656880980ad6
-    component_id: sdc.umami_theme.section
-    component_version: 5ef4c2af9bd07348
-    inputs:
-      columns: '100'
-      mobile_columns: '1'
-      width: 80%
-      margin_block_start: '0'
-      margin_block_end: '64'
-      padding_block_start: '0'
-      padding_block_end: '0'
-      section_header: false
-      section_footer: false
-  '3:main_slot:0':
-    parent_uuid: 2e9e7b6d-0b6b-4c7a-bc91-656880980ad6
-    slot: main_slot
+  '0:related_slot:0':
+    parent_uuid: 5889fd78-94b3-4a34-8131-f9430fa3b5c8
+    slot: related_slot
     uuid: 0523e42a-a0e7-4245-ad73-06e9a10d8735
     component_id: block.views_block.related_recipes-related_recipes_block
-    component_version: 4731ba1630732d7e
     inputs:
       label: ''
       label_display: '0'

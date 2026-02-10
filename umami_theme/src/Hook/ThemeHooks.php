@@ -7,11 +7,13 @@ namespace Drupal\umami_theme\Hook;
 use Drupal\Component\Utility\NestedArray;
 use Drupal\Core\Breadcrumb\ChainBreadcrumbBuilderInterface;
 use Drupal\Core\Controller\TitleResolverInterface;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Extension\ThemeExtensionList;
 use Drupal\Core\Extension\ThemeSettingsProvider;
 use Drupal\Core\Hook\Attribute\Hook;
+use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\umami_theme\RenderCallbacks;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\node\NodeInterface;
@@ -34,6 +36,7 @@ final class ThemeHooks {
     private readonly ThemeExtensionList $themeList,
     private readonly EntityTypeManagerInterface $entityTypeManager,
     private readonly RouteMatchInterface $routeMatch,
+    private readonly LanguageManagerInterface $languageManager,
     private readonly TitleResolverInterface $titleResolver,
     private readonly ChainBreadcrumbBuilderInterface $breadcrumb,
     private readonly ModuleHandlerInterface $moduleHandler,
@@ -112,6 +115,12 @@ final class ThemeHooks {
     $variables['scheme'] = $this->themeSettings->getSetting('scheme');
     // Get the theme base path for font preloading.
     $variables['umami_theme_path'] = $this->requestStack->getCurrentRequest()->getBasePath() . '/' . $this->themeList->getPath('umami_theme');
+
+    // Port Umami's "two-columns" / "one-column" body classes so layout CSS can
+    // match the core demo theme more closely.
+    $page = $variables['page'] ?? [];
+    $has_sidebar = !empty($page['sidebar_first']) || !empty($page['sidebar_second']);
+    $variables['attributes']['class'][] = $has_sidebar ? 'two-columns' : 'one-column';
   }
 
   /**
@@ -119,6 +128,10 @@ final class ThemeHooks {
    */
   #[Hook('preprocess_page')]
   public function preprocessPage(array &$variables): void {
+    // Canvas page context (used by the theme layout for small per-page tweaks).
+    $variables['canvas_page_id'] = NULL;
+    $variables['language_id'] = $this->languageManager->getCurrentLanguage()->getId();
+
     // @see \Drupal\Core\Block\Plugin\Block\PageTitleBlock::build()
     $variables['title'] = [
       '#type' => 'page_title',
@@ -133,7 +146,18 @@ final class ThemeHooks {
       ->toRenderable();
 
     $route_name = $this->routeMatch->getRouteName();
-    if ($route_name === 'entity.canvas_page.canonical' || str_starts_with($this->routeMatch->getRouteObject()?->getPath() ?? '', '/canvas/')) {
+    if ($route_name === 'entity.canvas_page.canonical') {
+      $canvas_page = $this->routeMatch->getParameter('canvas_page');
+      if ($canvas_page instanceof EntityInterface) {
+        $variables['canvas_page_id'] = (string) $canvas_page->id();
+      }
+      elseif (is_scalar($canvas_page)) {
+        $variables['canvas_page_id'] = (string) $canvas_page;
+      }
+
+      $variables['rendered_by_canvas'] = TRUE;
+    }
+    elseif (str_starts_with($this->routeMatch->getRouteObject()?->getPath() ?? '', '/canvas/')) {
       $variables['rendered_by_canvas'] = TRUE;
     }
     elseif ($route_name === 'entity.node.canonical' && $this->moduleHandler->moduleExists('canvas')) {

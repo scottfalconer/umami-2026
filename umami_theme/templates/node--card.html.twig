@@ -1,49 +1,51 @@
 {#
 /**
  * @file
- * Umami "2026" card: prefer Mercury SDCs.
+ * Umami parity: card view mode.
  *
- * Drupal CMS renders cards via node view modes (used by Views). This template
- * maps Umami node data into Mercury's card SDC, so we exercise Mercury rather
- * than re-implementing card markup and styling.
+ * Drupal CMS uses the `card` view mode heavily in Views listings. To keep
+ * visual parity with core's Umami demo, render `card` using the same Umami card
+ * markup/classes as `card_common`.
  */
 #}
-{% set title_text = label ?: '' %}
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'umami-card',
+  ]
+%}
 
-{# Map Umami's featured image into Mercury's card media prop (best-effort). #}
-{% set media = {} %}
-{% set media_entity = node.field_media_image.entity ?? null %}
-{% set media_item = media_entity ? (media_entity.field_media_image.0 ?? null) : null %}
-{% if media_item and media_item.entity %}
-  {#
-    Mercury's card uses `canvas:image`, which validates props strictly: width/height
-    must be numbers (NULL causes InvalidComponentException).
-  #}
-  {% set media_width = (media_item.width|default(0)) + 0 %}
-  {% set media_height = (media_item.height|default(0)) + 0 %}
-  {% if media_width > 0 and media_height > 0 %}
-    {% set media = {
-      src: file_url(media_item.entity.uri.value),
-      alt: media_item.alt|default(''),
-      width: media_width,
-      height: media_height,
-    } %}
-  {% endif %}
-{% endif %}
+{% set title_markup = label ? label : content.field_title|default('') %}
+{% set read_more %}
+  {% trans %}View {{ node.type.entity.label() }}{% endtrans %}
+{% endset %}
 
-{# Recipe cards have a dedicated summary field we can use as card text. #}
-{% set description_text = '' %}
-{% if node.bundle == 'recipe' and node.field_summary and node.field_summary.value %}
-  {% set description_text = node.field_summary.value %}
-{% endif %}
+<article{{ attributes.addClass(classes).setAttribute('data-component-id', 'umami:card') }}>
+  <div class="umami-card__wrapper">
+    {{ title_prefix }}
+    {% if title_markup %}
+      <h2{{ title_attributes.addClass('umami-card__title', 'umami-title').setAttribute('data-component-id', 'umami:title') }}>
+        {{ title_markup }}
+      </h2>
+    {% endif %}
+    {{ title_suffix }}
 
-{% include 'umami_theme:card' with {
-  heading_text: title_text,
-  level: 2,
-  orientation: 'vertical',
-  style: 'framed',
-  url: url,
-  media: media,
-  text: description_text,
-  is_text_centered: false,
-} only %}
+    <a{{ create_attribute({'class': ['umami-card__read-more', 'read-more']}).setAttribute('href', url).setAttribute('data-component-id', 'umami:read-more') }}>
+      {{ read_more }}
+      <span class="visually-hidden"> - {{ title_markup }}</span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" class="read-more__icon">
+        <path fill="none" d="M159.19 117.37v365.26L341.82 300 159.19 117.37z"/>
+        <path fill="#008068" d="M341.82 300L159.19 482.63v98.99L440.81 300 159.19 18.38v98.99L341.82 300z"/>
+      </svg>
+    </a>
+
+    <div{{ content_attributes.addClass('umami-card__content') }}>
+      {{ content }}
+    </div>
+  </div>
+</article>

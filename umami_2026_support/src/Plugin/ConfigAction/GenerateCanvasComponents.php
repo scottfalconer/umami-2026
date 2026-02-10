@@ -13,12 +13,12 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Forces Canvas to (re)generate Component config entities during recipe apply.
- *
- * This is a workaround for install-time ordering during recipe application:
- * Canvas component generation/updates can occur after recipe config actions run,
- * but Drupal CMS recipes (and our site template) want to disable some
- * `canvas.component.*` configs via config actions.
- */
+   *
+   * This is a workaround for install-time ordering during recipe application:
+   * Canvas component generation/updates can occur after recipe config actions
+   * run, but Drupal CMS recipes (and our site template) want to disable some
+   * `canvas.component.*` configs via config actions.
+   */
 #[ConfigAction(
   id: 'umamiGenerateCanvasComponents',
   admin_label: new TranslatableMarkup('Generate Canvas components'),
@@ -47,4 +47,3 @@ final class GenerateCanvasComponents implements ConfigActionPluginInterface, Con
   }
 
 }
-
