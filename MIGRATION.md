@@ -1,4 +1,4 @@
-# Umami 2026 (Drupal CMS 2.0) Migration Notes
+# Umami 2026 (Drupal CMS 2.0) Build Notes
 
 This repository contains the current **public preview** output of the “Umami, but for 2026” effort: an Umami-like demo built on **Drupal CMS 2.0 + Canvas**, packaged as a **recipe** plus a **theme** (forked from the Mercury starterkit).
 
@@ -8,6 +8,7 @@ Start here:
 - What works / what’s left: `STATUS.md`
 - Upstream Canvas context: `UPSTREAM.md`
 - AI disclosure notes: `AI_PROCESS.md`
+- Asset attribution / licensing notes: `ASSET_ATTRIBUTION.md`
 
 ## What Exists (Source Of Truth vs Baseline)
 
@@ -41,6 +42,17 @@ worth taking rollback snapshots (DB dump + files). Snapshots are intentionally n
    - The theme is packaged separately, with assets vendored so it does not depend on core’s Umami profile/theme paths.
 5. **Validate by fresh installing on a tester site.**
    - The tester sandbox exists specifically to catch “works on my site” gaps (missing config deps, missing assets, install-time warnings).
+
+## Build Workflow (Concrete)
+
+This is the workflow used to produce what’s committed in this repo:
+
+1. Create a Drupal CMS 2.0 project and enable the needed building blocks (Canvas, Gin, etc.).
+2. Build the content model + demo content in an “authoring” site (treat it like a normal CMS build).
+3. Generate a standalone theme from the Mercury starterkit and customize it for Umami branding.
+4. Move key routes and full-node rendering to Canvas (Canvas pages + Canvas Content Templates).
+5. Export configuration + default content into `umami_2026/`, and keep the support module/theme as separate packages.
+6. Iterate by repeatedly doing clean installs from the recipe in a separate “clean-install” site.
 
 ## How An AI Agent Helped (Concrete)
 
@@ -79,5 +91,3 @@ We did not rely on the agent for:
    - Mobile/tablet/desktop layouts match baseline expectations (spacing, alignment, no duplication).
 
 Progress tracking and remaining tasks: `STATUS.md`.
-
-Maintainer-style findings and remediation ideas: `claude-findings.md`.

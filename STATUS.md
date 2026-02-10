@@ -14,19 +14,10 @@ Last updated: 2026-02-10
 During development, we used separate local sandboxes (authoring vs clean-install testing) to
 avoid export drift. Those sandboxes are not part of this repo.
 
-Local sandboxes (not committed, but used during development):
-
-- Authoring site (source-of-truth build/export): `../sandboxes/umami2026-site/`
-- Clean-install tester (fresh installs from recipe): `../sandboxes/umami-2026-tester/`
-
 ## Backups / Snapshots
 
 When iterating on large export-driven changes, it’s worth taking rollback snapshots (DB dump +
 files tarball). Snapshots are intentionally not committed.
-
-Latest local snapshot (DB + files):
-
-- `../snapshots/umami2026-snapshot-20260208-171652/`
 
 ## What’s Working Now
 
@@ -74,9 +65,9 @@ Verified on: 2026-02-10
   - `ddev exec php -l cms/web/themes/contrib/umami_theme/src/Hook/ThemeHooks.php`
   - `ddev exec php -l cms/web/themes/contrib/umami_theme/src/RenderCallbacks.php`
 - Drupal intent testing ("new site setup" UI installer):
-  - Artifacts: `../test_outputs/umami_2026_install_ui/compare_20260210h_post_wrappers_install_only/` (errors: 0, verdict: IDENTICAL).
+  - Verified the template appears in the installer and completes install successfully (local artifacts not committed).
 
-## External Review Notes (Gabor Hojtsy, 2026-02-10)
+## Review Notes (2026-02-10)
 
 Notes captured from a review pass in a separate environment. Some items may depend on exact Drupal CMS / Canvas versions; reproduce on a clean install before changing exports.
 
@@ -111,9 +102,7 @@ Notes captured from a review pass in a separate environment. Some items may depe
       - `umami_theme/components/node-article-full/`
       - `umami_theme/components/node-recipe-full/`
     - Canvas templates now compose into those wrappers (so existing Umami CSS for `.node--view-mode-full` applies).
-    - Visual diff evidence (demo_umami vs template):
-      - After node wrappers: `../test_outputs/umami_2026_parity/diff_after_node_wrappers/summary.md`
-      - Example improvement: desktop `article_full` changed_ratio `0.7626` -> `0.4003` (compare `diff_after_sections` vs `diff_after_node_wrappers`).
+    - Local visual diffs showed improved parity after introducing the node wrapper markup.
 - Favicon missing.
   - Status: **DONE**
   - Fix:
@@ -148,8 +137,7 @@ Notes captured from a review pass in a separate environment. Some items may depe
 
 ### Process / Reference Implementations
 
-- Follow up with @adam.hoenich’s DrupalCon site template generator (Umami example) to compare output and best practices for recipe + default content generation.
-  - Plan: diff our exports vs generated output and adopt improvements that reduce custom code and increase portability.
+- Compare our exports against other Drupal CMS site template generators (including Umami-style examples) and adopt improvements that reduce custom code and increase portability.
 - Alignment notes (video workflow):
   - We already follow the “build the site first, then export” approach (authoring sandbox + clean-install tester) and use `drush site:export` as a starting point.
   - We treat this as a **fresh-install site template** (validated via `drush site:install <recipe>`), not an “apply onto an existing site” recipe (`drush recipe:apply`), due to config conflicts observed in early exports.
@@ -218,7 +206,7 @@ Upstream tracking:
 If you’re continuing this work in a new chat/thread, the next focused work items should be:
 
 - Reduce layout drift / brittle CSS overrides by moving page assembly into Canvas templates and Mercury SDC components.
-- Compare with the DrupalCon site template generator output (Adam Hoenich) and adopt best practices where it reduces custom code.
+- Compare against other template generator outputs and adopt best practices where it reduces custom code.
 
 ## What’s Left To Do (Concrete Next Steps)
 
@@ -244,7 +232,7 @@ If you’re continuing this work in a new chat/thread, the next focused work ite
 8. **Verification gates for “serious review”**
    - Clean install from recipe on tester.
    - Drupal CMS UI installer (“new site setup”) intent-test scenario:
-     - Artifacts: `../test_outputs/umami_2026_install_ui/compare_20260210h_post_wrappers_install_only/`
+     - Artifacts are local-only and intentionally not committed.
    - No PHP errors/notices during install or on key pages.
    - Canvas loads for editing (article + recipe + Canvas pages).
    - Responsive parity checks at common breakpoints (mobile, tablet, desktop) for:
@@ -254,15 +242,13 @@ If you’re continuing this work in a new chat/thread, the next focused work ite
      - About
      - Search (empty + results)
    - Run basic PHP linting via DDEV for anything we touched (for example: `ddev exec php -l ...`).
-   - Reference checklists / findings:
-     - `claude-findings.md`
-     - `MIGRATION.md`
+   - Reference notes: `MIGRATION.md`
 
 ## Public Release Readiness
 
 ### Safe to publish
 
-- **Secrets hygiene**: No passwords, API keys, tokens, private keys, or credentials detected in the repo. The `.gitignore` excludes local artifacts (`sandboxes/`, `local-packages/`, `token.txt`, `.ddev/`, `vendor/`, `node_modules/`).
+- **Secrets hygiene**: No API keys, tokens, private keys, or other credentials detected in the repo. Note: default content includes pre-hashed demo user password hashes in `umami_2026/content/user/*.yml`. The `.gitignore` excludes local artifacts (`sandboxes/`, `local-packages/`, `token.txt`, `.ddev/`, `vendor/`, `node_modules/`).
 - **License**: GPL-2.0-or-later (matches Drupal ecosystem). Vendored fonts are SIL OFL 1.1 (compatible).
 - **Clean install verified**: exit 0 on Drupal CMS 2.0.0 / core 11.3.2 / Canvas 1.1.0.
 - **Install instructions**: README.md contains a single canonical DDEV-based quickstart.
@@ -273,7 +259,7 @@ If you’re continuing this work in a new chat/thread, the next focused work ite
 
 1. **Naming/versioning**: Package names (`drupal/umami_2026`, `drupal/umami_theme`) and version constraints (`*@dev`) are placeholder/preview. Final names and stable versioning need to be decided before Drupal.org packaging.
 2. **"Canvas native" content model**: Legacy Umami custom block bundles (banner/footer promo/disclaimer) were removed and replaced with dedicated SDC components rendered by the theme layout.
-3. **CSS fragility**: Some overrides still target Tailwind utility classes (fragile across Mercury/Tailwind upgrades). Documented in STATUS.md and `claude-findings.md`.
+3. **CSS fragility**: Some overrides still target Tailwind utility classes (fragile across Mercury/Tailwind upgrades). Documented in `STATUS.md`.
 4. **Canvas workarounds / upstream**:
    - Default language URL prefix: template removes the default prefix (`en: ''`) because Canvas UI currently fails to render when the default language has a prefix like `/en`.
    - `umamiGenerateCanvasComponents`: install-time workaround for Canvas component disable ordering; confirm whether it is still required on Canvas `1.1.0` (see `UPSTREAM.md`).

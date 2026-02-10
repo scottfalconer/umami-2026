@@ -14,9 +14,9 @@ This repository contains the **install package** for the Umami "2026" rebuild as
 This is intended for **fresh installs** (Drupal CMS site templates), not for applying to an existing site.
 
 Progress / remaining work: see `STATUS.md`.
-Background and approach notes: see `MIGRATION.md`.
-Maintainer-style findings: see `claude-findings.md`.
+How this template was built: see `MIGRATION.md`.
 AI process notes: see `AI_PROCESS.md`.
+Upstream tracking / known issues: see `UPSTREAM.md`.
 Asset attribution / licensing notes: see `ASSET_ATTRIBUTION.md`.
 
 ## Tested Versions
@@ -33,7 +33,7 @@ From the **Drupal CMS project root** (a `drupal/cms` Composer project with DDEV)
 ```bash
 # 1. Clone this repo into a local-packages directory the container can see.
 mkdir -p local-packages
-git clone https://github.com/scottfalconer/umami-drupal-cms.git local-packages/umami-drupal-cms
+git clone <your-repo-url> local-packages/umami-drupal-cms
 
 ddev start
 

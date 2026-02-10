@@ -22,10 +22,12 @@ Workaround implemented in this template:
   disables.
 
 Related Canvas issues (context, not confirmed duplicates):
-- https://www.drupal.org/project/canvas/issues/3541543 (active version errors in component config entities)
-- https://www.drupal.org/project/canvas/issues/3567413 (active version changes and upgrading component instance versions)
-- https://www.drupal.org/project/canvas/issues/3562354 (recipes + `is_syncing`)
-- https://www.drupal.org/project/canvas/issues/3570699 (block component version hashes change across core versions)
+- Active version errors in component config entities
+- Component instance version changes and upgrading component instance versions
+- Recipes + `is_syncing`
+- Component version hashes changing across environments/core versions
+
+Search the Canvas issue queue for keywords like `active_version`, `hash mismatch`, `recipes`, and `is_syncing`.
 
 Action:
 - If we want to remove the workaround, file a Canvas issue with the failure
