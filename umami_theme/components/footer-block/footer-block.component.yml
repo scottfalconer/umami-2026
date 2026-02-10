@@ -1,0 +1,38 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Footer promo
+description: 'Umami-style footer promo band with image, title, summary, and link.'
+group: Umami
+props:
+  type: object
+  properties:
+    title:
+      type: string
+      title: Title
+      examples:
+        - 'Umami Food Magazine'
+    summary:
+      type: string
+      title: Summary
+      pattern: "(.|\\r?\\n)*"
+      examples:
+        - 'Skills and know-how. Magazine exclusive articles, recipes and plenty of reasons to get your copy today.'
+    link_text:
+      type: string
+      title: Link text
+      examples:
+        - 'Find out more'
+    link_url:
+      type: string
+      title: Link URL
+      examples:
+        - /about-umami
+    media:
+      $ref: json-schema-definitions://canvas.module/image
+      title: Image
+      type: object
+      examples:
+        - src: /sites/default/files/umami-bundle.png
+          alt: 'Umami Food Magazine cover'
+          width: 300
+          height: 300
+

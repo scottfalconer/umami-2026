@@ -1,0 +1,53 @@
+{#
+/**
+ * @file
+ * Recipe full wrapper.
+ *
+ * Restore Umami's classic `node--view-mode-full` wrapper/classes so parity CSS
+ * applies, while still letting Canvas compose the inner layout.
+ */
+#}
+
+{% set classes = classes|default([])|merge([
+  'node',
+  'node--type-recipe',
+  'node--view-mode-full'
+])|filter(v => v is not empty) %}
+
+<article class="{{ classes|join(' ') }}" data-component-id="umami:node-recipe-full">
+  {% if title is not empty %}
+    <header class="node__header">
+      <h1 class="page-title">{{ title }}</h1>
+    </header>
+  {% endif %}
+
+  <div class="node__content">
+    {% if media.src is not empty %}
+      <div class="field field--name-field-media-image field--type-image field--label-hidden">
+        {% include 'canvas:image' ignore missing with {
+          src: media.src,
+          alt: media.alt,
+          width: media.width,
+          height: media.height,
+          loading: 'eager'
+        } only %}
+      </div>
+    {% endif %}
+
+    {% block summary_slot %}{% endblock %}
+
+    {% block meta_slot %}{% endblock %}
+
+    <div class="umami-recipe-full__layout">
+      <div class="umami-recipe-full__ingredients">
+        {% block ingredients_slot %}{% endblock %}
+      </div>
+      <div class="umami-recipe-full__directions">
+        {% block directions_slot %}{% endblock %}
+      </div>
+    </div>
+
+    {% block related_slot %}{% endblock %}
+  </div>
+</article>
+

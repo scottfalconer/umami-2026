@@ -1,0 +1,39 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Node article full
+description: Render an article node in full view mode (Umami parity wrapper).
+group: Umami
+props:
+  type: object
+  required:
+    - title
+  properties:
+    title:
+      type: string
+      title: Title
+      examples:
+        - "Dairy-free and delicious milk chocolate"
+    date:
+      type: integer
+      title: Created timestamp
+      examples:
+        - 1770856866
+    author:
+      type: string
+      title: Author name
+      examples:
+        - "admin"
+    media:
+      $ref: json-schema-definitions://canvas.module/image
+      title: Image
+      type: object
+      examples:
+        - src: "assets/placeholder.jpg"
+          alt: "Placeholder image"
+          width: 1920
+          height: 1344
+slots:
+  main_slot:
+    title: Main content
+  aside_slot:
+    title: Aside content
+

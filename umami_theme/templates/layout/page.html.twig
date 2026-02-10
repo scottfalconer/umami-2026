@@ -22,6 +22,10 @@
  */
 #}
 <div class="layout-container">
+  {% set current_langcode = language_id|default('en') %}
+  {% set is_es = current_langcode == 'es' %}
+  {% set is_recipes_landing = canvas_page_id|default('') == '1' %}
+
   {% if page.pre_header|render|trim is not empty or
      page.header|render|trim is not empty %}
     <header class="layout-header" role="banner">
@@ -38,8 +42,43 @@
     {{ page.highlighted }}
 
     {# Full-width banner band (matches classic Umami `banner_top` region). #}
-    {% if page.banner_top|render|trim is not empty %}
+    {% if is_front or is_recipes_landing or page.banner_top|render|trim is not empty %}
       <div class="layout-banner-top">
+        {% if is_front %}
+          {{
+            include(
+              'umami_theme:banner',
+              {
+                title: is_es ? 'Pasta vegetariana horneada súper fácil' : 'Super easy vegetarian pasta bake',
+                summary: is_es ? 'Una pasta al horno es la comida más reconfortante que hay. Este plato al horno es súper rápido de preparar y es ideal para cocinar entre semana para toda la familia.' : 'A wholesome pasta bake is the ultimate comfort food. This delicious bake is super quick to prepare and an ideal midweek meal for all the family.',
+                link_text: is_es ? 'Ver receta' : 'View recipe',
+                link_url: is_es ? '/es/node/6' : '/super-easy-vegetarian-pasta-bake',
+                media: {
+                  src: file_url('public://veggie-pasta-bake-hero-umami.jpg'),
+                  alt: is_es ? 'Pasta vegetariana al horno' : 'Vegetarian pasta bake'
+                }
+              },
+              with_context = false
+            )
+          }}
+        {% elseif is_recipes_landing %}
+          {{
+            include(
+              'umami_theme:banner',
+              {
+                title: is_es ? 'Brownies Veganos de Chocolate y Nuez' : 'Vegan chocolate and nut brownies',
+                summary: is_es ? 'Estos exquisitos brownies quedarán sabrosos por dentro y crujientes por fuera. ¡La tentación perfecta!' : 'These sumptuous brownies should be gooey on the inside and crisp on the outside. A perfect indulgence!',
+                link_text: is_es ? 'Ver receta' : 'View recipe',
+                link_url: is_es ? '/es/node/2' : '/vegan-chocolate-and-nut-brownies',
+                media: {
+                  src: file_url('public://vegan-brownies-hero-umami.jpg'),
+                  alt: is_es ? 'Brownies veganos de chocolate y nueces' : 'Vegan chocolate and nut brownies'
+                }
+              },
+              with_context = false
+            )
+          }}
+        {% endif %}
         {{ page.banner_top }}
       </div>
     {% endif %}
@@ -91,24 +130,48 @@
     {% endif %}
   </main>
 
-  {% if page.footer or page.bottom %}
-    <footer class="footer" role="contentinfo">
-      {% if page.footer %}
-        <div class="layout-footer">
-          <div class="container">
-            {{ page.footer }}
-          </div>
+  <footer class="footer" role="contentinfo">
+    <div class="layout-footer">
+      <div class="container">
+        <div id="block-mercury-footer-promo">
+          {{
+            include(
+              'umami_theme:footer-block',
+              {
+                title: is_es ? 'Revista de Comida Umami' : 'Umami Food Magazine',
+                summary: is_es ? 'Trucos y consejos. Artículos exclusivos de la revista, recetas y una variedad de razones para conseguir tu copia hoy.' : 'Skills and know-how. Magazine exclusive articles, recipes and plenty of reasons to get your copy today.',
+                link_text: is_es ? 'Más información' : 'Find out more',
+                link_url: is_es ? '/es/node/18' : '/about-umami',
+                media: {
+                  src: file_url('public://umami-bundle.png'),
+                  alt: is_es ? 'Revista de Comida Umami' : 'Umami Food Magazine'
+                }
+              },
+              with_context = false
+            )
+          }}
         </div>
-      {% endif %}
+        {{ page.footer }}
+      </div>
+    </div>
 
-      {% if page.bottom %}
-        <div class="layout-bottom">
-          <div class="container">
-            {{ page.bottom }}
-          </div>
+    <div class="layout-bottom">
+      <div class="container">
+        <div id="block-mercury-disclaimer">
+          {{
+            include(
+              'umami_theme:disclaimer',
+              {
+                disclaimer: is_es ? '<strong>Revista Umami y Publicaciones Umami</strong> es una revista ficticia publicada con propósito ilustrativo sólamente.' : '<strong>Umami Magazine &amp; Umami Publications</strong> is a fictional magazine and publisher for illustrative purposes only.',
+                copyright: is_es ? '&copy; 2026 Términos y Condiciones' : '&copy; 2026 Terms &amp; Conditions'
+              },
+              with_context = false
+            )
+          }}
         </div>
-      {% endif %}
-    </footer>
-  {% endif %}
+        {{ page.bottom }}
+      </div>
+    </div>
+  </footer>
 
 </div>{# /.layout-container #}

@@ -1,0 +1,35 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Node recipe full
+description: Render a recipe node in full view mode (Umami parity wrapper).
+group: Umami
+props:
+  type: object
+  required:
+    - title
+  properties:
+    title:
+      type: string
+      title: Title
+      examples:
+        - "Super easy vegetarian pasta bake"
+    media:
+      $ref: json-schema-definitions://canvas.module/image
+      title: Image
+      type: object
+      examples:
+        - src: "assets/placeholder.jpg"
+          alt: "Placeholder image"
+          width: 1920
+          height: 1344
+slots:
+  summary_slot:
+    title: Summary
+  meta_slot:
+    title: Meta
+  ingredients_slot:
+    title: Ingredients
+  directions_slot:
+    title: Directions
+  related_slot:
+    title: Related
+

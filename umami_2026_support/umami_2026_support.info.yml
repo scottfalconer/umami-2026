@@ -4,5 +4,4 @@ description: 'Support module for the Umami 2026 Drupal CMS site template.'
 core_version_requirement: ^11
 package: Umami 2026
 dependencies:
-  - block_content
   - canvas

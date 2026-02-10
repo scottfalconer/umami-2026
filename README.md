@@ -22,7 +22,7 @@ Asset attribution / licensing notes: see `ASSET_ATTRIBUTION.md`.
 ## Tested Versions
 
 - `drupal/cms` `2.0.0` (Drupal core `11.3.2`)
-- `drupal/canvas` `1.0.4`
+- `drupal/canvas` `1.1.0`
 
 ## Quick Start (Fresh Install)
 
@@ -43,15 +43,27 @@ ddev composer config repositories.umami_2026_support path local-packages/umami-d
 ddev composer config repositories.umami_theme path local-packages/umami-drupal-cms/umami_theme
 
 # 3. Install the recipe package + its dependencies.
-ddev composer require drupal/umami_2026:*@dev -W
+# Note: quote the constraint to avoid zsh globbing on `*`.
+ddev composer require 'drupal/umami_2026:*@dev' -W
 
 # 4. Locate the installed recipe directory (path may vary).
-ddev exec find recipes -maxdepth 4 -name recipe.yml -print
+ddev exec find -L recipes -maxdepth 4 -name recipe.yml -print
 # Expected output includes a path like: recipes/umami_2026/recipe.yml
 
-# 5. Install using the recipe.
+# 5. Install using the recipe directory found above.
 # WARNING: This drops and recreates the database.
-ddev exec drush site:install recipes/umami_2026 -y --site-name="Umami Food Magazine"
+ddev exec drush site:install recipes/umami_2026 -y --site-name="Umami Food Magazine" --account-name=admin --account-pass=admin
+```
+
+### Composer Stability Note (Important)
+
+This install package is currently consumed via Composer **path repositories** and does not yet have tagged releases on packages.drupal.org. Keep your Drupal CMS project `minimum-stability` at `stable` and use the explicit `*@dev` constraint shown above.
+
+If you accidentally run `composer require drupal/umami_2026` without `*@dev`, Composer will usually fail due to minimum stability. Either re-run the require with `*@dev`, or (less preferred) temporarily relax stability in your Drupal CMS project:
+
+```bash
+ddev composer config minimum-stability dev
+ddev composer config prefer-stable true
 ```
 
 After install, visit the site at the DDEV URL. Key demo routes: `/`, `/articles`, `/recipes`, `/about`.
@@ -63,7 +75,7 @@ To add more Drupal CMS features after install, use **Extend > Recommended** (`/a
 ```bash
 # WARNING: Destructive.
 ddev exec drush sql:drop -y
-ddev exec drush site:install recipes/umami_2026 -y --site-name="Umami Food Magazine"
+ddev exec drush site:install recipes/umami_2026 -y --site-name="Umami Food Magazine" --account-name=admin --account-pass=admin
 ```
 
 ## Known behavior / caveats
@@ -71,6 +83,7 @@ ddev exec drush site:install recipes/umami_2026 -y --site-name="Umami Food Magaz
 - Drush (and the UI installer) will typically override `system.site:name` during the "configure site" step unless a name is provided (for Drush: `--site-name=...`).
 - During install, Drush may log a notice about a missing core translation file download (for example: `drupal-11.3.2.es.po`). This does not affect the recipe itself.
 - Canvas component disable ordering: the recipe works around a Canvas `active_version` hash mismatch by regenerating components before disabling them (see `UPSTREAM.md`).
+- Canvas UI + default language URL prefix: Canvas is mounted at `/canvas` and does not currently account for a default-language URL prefix like `/en`. This template removes the default language prefix (`en: ''`) to keep Canvas editing working in multilingual installs.
 - Some CSS overrides still target Tailwind utility classes from the Mercury starterkit; these are fragile across Mercury/Tailwind upgrades and are documented for future cleanup (see `STATUS.md`).
 
 ## What this package avoids

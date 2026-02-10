@@ -37,6 +37,7 @@ worth taking rollback snapshots (DB dump + files). Snapshots are intentionally n
    - Article + Recipe full pages render via Canvas Content Templates.
 4. **Export the result as an installable recipe.**
    - Export produces recipe config + default content.
+   - We used `drush site:export` as the starting point, then curated the output for portability (remove environment-specific config, remove Umami profile/theme dependencies, etc.).
    - The theme is packaged separately, with assets vendored so it does not depend on core’s Umami profile/theme paths.
 5. **Validate by fresh installing on a tester site.**
    - The tester sandbox exists specifically to catch “works on my site” gaps (missing config deps, missing assets, install-time warnings).
@@ -66,7 +67,7 @@ We did not rely on the agent for:
 - `{"detail":"Bad Request"}` during Canvas iteration usually indicates malformed Canvas structured-data prop expressions (JSON:API-driven edits).
   - Practical mitigation: copy known-good formats from Canvas’ own test fixtures (for example, `NodeTemplatesTest` in the Canvas project).
 - Clean install warnings like “block plugin was not found” usually indicate configuration referencing blocks/plugins that are not yet present at the point the recipe applies them.
-  - Mitigation used here: placed custom blocks are rendered via `umami_2026_support` (stable plugin ID + UUID config) so recipe config can import before content exists.
+  - Mitigation used here: avoid exporting legacy Umami custom blocks for the template (banner/footer promo/disclaimer are now theme SDC components rendered by the page layout).
 
 ## What’s Left Before “Serious Drupal Community Review”
 

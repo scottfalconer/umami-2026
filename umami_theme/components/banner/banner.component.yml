@@ -1,0 +1,38 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Banner
+description: 'Umami-style banner band with image, title, summary, and link.'
+group: Umami
+props:
+  type: object
+  properties:
+    title:
+      type: string
+      title: Title
+      examples:
+        - 'Super easy vegetarian pasta bake'
+    summary:
+      type: string
+      title: Summary
+      pattern: "(.|\\r?\\n)*"
+      examples:
+        - 'A wholesome pasta bake is the ultimate comfort food.'
+    link_text:
+      type: string
+      title: Link text
+      examples:
+        - 'View recipe'
+    link_url:
+      type: string
+      title: Link URL
+      examples:
+        - /recipes/super-easy-vegetarian-pasta-bake
+    media:
+      $ref: json-schema-definitions://canvas.module/image
+      title: Image
+      type: object
+      examples:
+        - src: /sites/default/files/veggie-pasta-bake-hero-umami.jpg
+          alt: 'A baked pasta dish'
+          width: 1300
+          height: 730
+

@@ -1,0 +1,48 @@
+{#
+/**
+ * @file
+ * Umami-style banner band.
+ *
+ * Mirrors classic Umami banner markup so existing `.banner*` CSS hooks apply.
+ */
+#}
+{% set banner_title = title|default('')|trim %}
+{% set banner_summary = summary|default('')|trim %}
+{% set banner_link_text = link_text|default('')|trim %}
+{% set banner_link_url = link_url|default('')|trim %}
+
+<div class="banner" data-component-id="umami:banner">
+  <div class="container">
+    <div class="banner__inner">
+      {% if media is not empty and media.src is not empty %}
+        <div class="banner__image">
+          {% set image_props = {
+            src: media.src,
+            alt: media.alt|default('')
+          } %}
+          {% if media.width is defined and media.width is not empty %}
+            {% set image_props = image_props|merge({width: media.width}) %}
+          {% endif %}
+          {% if media.height is defined and media.height is not empty %}
+            {% set image_props = image_props|merge({height: media.height}) %}
+          {% endif %}
+          {% include 'canvas:image' ignore missing with image_props only %}
+        </div>
+      {% endif %}
+
+      <div class="banner__content">
+        {% if banner_title %}
+          <h2 class="banner__title">{{ banner_title }}</h2>
+        {% endif %}
+
+        {% if banner_summary %}
+          <p>{{ banner_summary }}</p>
+        {% endif %}
+
+        {% if banner_link_url and banner_link_text %}
+          <p><a href="{{ banner_link_url }}">{{ banner_link_text }}</a></p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

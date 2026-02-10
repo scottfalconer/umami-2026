@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * Umami-style footer promo block.
+ *
+ * Mirrors classic Umami markup so `.footer-block*` CSS hooks apply.
+ */
+#}
+{% set promo_title = title|default('')|trim %}
+{% set promo_summary = summary|default('')|trim %}
+{% set promo_link_text = link_text|default('')|trim %}
+{% set promo_link_url = link_url|default('')|trim %}
+
+<div class="block-type-footer-promo-block footer-block" data-component-id="umami:footer-block">
+  <div class="footer-block__wrapper">
+    {% if media is not empty and media.src is not empty %}
+      {% set image_props = {
+        src: media.src,
+        alt: media.alt|default('')
+      } %}
+      {% if media.width is defined and media.width is not empty %}
+        {% set image_props = image_props|merge({width: media.width}) %}
+      {% endif %}
+      {% if media.height is defined and media.height is not empty %}
+        {% set image_props = image_props|merge({height: media.height}) %}
+      {% endif %}
+      {% include 'canvas:image' ignore missing with image_props only %}
+    {% endif %}
+
+    <div class="footer-block__content">
+      {% if promo_title %}
+        <h2 data-component-id="umami:title" class="footer-block__title umami-title">{{ promo_title }}</h2>
+      {% endif %}
+
+      {% if promo_summary %}
+        <p>{{ promo_summary }}</p>
+      {% endif %}
+
+      {% if promo_link_url and promo_link_text %}
+        <p><a class="footer-block__link" href="{{ promo_link_url }}">{{ promo_link_text }}</a></p>
+      {% endif %}
+    </div>
+  </div>
+</div>

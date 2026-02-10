@@ -22,9 +22,8 @@ The sandboxes under `sandboxes/` are local working environments used to iterate 
   - `umami_theme/components/recipe-meta/`
   - `umami_theme/components/ingredients-list/`
 - Reduced Layout Builder reliance by moving full node rendering to Canvas Content Templates and removing exported `layout_builder__layout` field config from node bundles/displays.
-- Investigated clean-install warnings, identified root cause (recipes import config before content), and implemented an install-safe fix:
-  - Added `umami_2026_support` with a stable block plugin (`umami_2026_block_content_uuid`) that renders a custom block by UUID.
-- Updated placed block config entities (`block.block.mercury_*`) to use that plugin.
+- Investigated clean-install warnings, identified root cause (recipes import config before content), and iterated on install-safe approaches:
+  - Removed legacy Umami custom block bundles (banner/footer promo/disclaimer) and replaced them with dedicated SDC components rendered by the theme layout.
 - Updated docs (`README.md`, `STATUS.md`, `MIGRATION.md`) to reflect the current state and workflow.
 
 ## What Needed Human Review
