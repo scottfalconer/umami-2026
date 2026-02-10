@@ -1,6 +1,6 @@
 name: 'Umami 2026'
 type: Site
-description: 'Umami Food Magazine demo template rebuilt for Drupal CMS 2.0 (Canvas + Umami Theme).'
+description: 'Umami Food Magazine demo template rebuilt for Umami 2026 (Canvas + Umami Theme).'
 recipes:
   - core/recipes/administrator_role
   - core/recipes/core_recommended_maintenance
